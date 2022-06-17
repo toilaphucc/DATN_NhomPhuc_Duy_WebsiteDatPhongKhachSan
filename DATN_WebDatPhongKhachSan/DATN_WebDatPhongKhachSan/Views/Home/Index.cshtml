@@ -1,8 +1,523 @@
-﻿@{
-    ViewData["Title"] = "Home Page";
-}
+﻿<div class="site-wrap">
 
-<div class="text-center">
-    <h1 class="display-4">Welcome</h1>
-    <p>Learn about <a href="https://docs.microsoft.com/aspnet/core">building Web apps with ASP.NET Core</a>.</p>
-</div>
+    <div class="site-mobile-menu">
+      <div class="site-mobile-menu-header">
+        <div class="site-mobile-menu-close mt-3">
+          <span class="icon-close2 js-menu-toggle"></span>
+        </div>
+      </div>
+      <div class="site-mobile-menu-body"></div>
+    </div> <!-- .site-mobile-menu -->
+    
+    
+   
+  
+    <div class="w-slide">
+      <div class="slide-one-item home-slider owl-carousel">
+        
+        <div class="site-blocks-cover overlay" style="background-image: url(assets/images/hero_1.jpg);" data-aos="fade" data-stellar-background-ratio="0.5">
+          <div class="container">
+            <div class="row align-items-center justify-content-center">
+              <div class="col-md-7 text-center" data-aos="fade">
+                
+                <h1 class="mb-2">Welcome To Suites</h1>
+                <h2 class="caption">Hotel &amp; Resort</h2>
+              </div>
+            </div>
+          </div>
+        </div>  
+
+        <div class="site-blocks-cover overlay" style="background-image: url(assets/images/hero_2.jpg);" data-aos="fade" data-stellar-background-ratio="0.5">
+          <div class="container">
+            <div class="row align-items-center justify-content-center">
+              <div class="col-md-7 text-center" data-aos="fade">
+                <h1 class="mb-2">Unique Experience</h1>
+                <h2 class="caption">Enjoy With Us</h2>
+              </div>
+            </div>
+          </div>
+        </div> 
+
+        <div class="site-blocks-cover overlay" style="background-image: url(assets/images/hero_3.jpg);" data-aos="fade" data-stellar-background-ratio="0.5">
+          <div class="container">
+            <div class="row align-items-center justify-content-center">
+              <div class="col-md-7 text-center" data-aos="fade">
+                <h1 class="mb-2">Relaxing Room</h1>
+                <h2 class="caption">Your Room, Your Stay</h2>
+              </div>
+            </div>
+          </div>
+        </div> 
+      </div>
+       <div class="chonlich tm-section tm-bg-img" id="tm-section-1">
+                <div class="tm-bg-white ie-container-width-fix-2">
+                    <div class="container ie-h-align-center-fix">
+                        <div class="row">
+                            <div class="col-xs-12 ml-auto mr-auto ie-container-width-fix">
+                                <form action="index.html" method="get" class="tm-search-form tm-section-pad-2">
+                                    <div class="form-row tm-search-form-row">
+                                        <div class="form-group tm-form-element tm-form-element-100">
+                                            <i class="fa fa-map-marker fa-2x tm-form-element-icon"></i>
+                                            <input name="city" type="text" class="form-control" id="inputCity" placeholder="Type your destination...">
+                                        </div>
+                                        <div class="form-group tm-form-element tm-form-element-50">
+                                            <i class="fa fa-calendar fa-2x tm-form-element-icon"></i>
+                                            <input name="check-in" type="date" class="form-control" id="inputCheckIn" placeholder="Check In">
+                                        </div>
+                                        <div class="form-group tm-form-element tm-form-element-50">
+                                            <i class="fa fa-calendar fa-2x tm-form-element-icon"></i>
+                                            <input name="check-out" type="date" class="form-control" id="inputCheckOut" placeholder="Check Out">
+                                        </div>
+                                    </div>
+                                    <div class="form-row tm-search-form-row">
+                                        <div class="form-group tm-form-element tm-form-element-2">                                            
+                                            <select name="adult" class="form-control tm-select" id="adult">
+                                                <option value="">Adult</option>
+                                                <option value="1">1</option>
+                                                <option value="2">2</option>
+                                                <option value="3">3</option>
+                                                <option value="4">4</option>
+                                                <option value="5">5</option>
+                                                <option value="6">6</option>
+                                                <option value="7">7</option>
+                                                <option value="8">8</option>
+                                                <option value="9">9</option>
+                                                <option value="10">10</option>
+                                            </select>
+                                            <i class="fa fa-2x fa-user tm-form-element-icon"></i>
+                                        </div>
+                                        <div class="form-group tm-form-element tm-form-element-2">                                            
+                                            <select name="children" class="form-control tm-select" id="children">
+                                                <option value="">Children</option>
+                                                <option value="0">0</option>
+                                                <option value="1">1</option>
+                                                <option value="2">2</option>
+                                                <option value="3">3</option>
+                                                <option value="4">4</option>
+                                                <option value="5">5</option>
+                                                <option value="6">6</option>
+                                                <option value="7">7</option>
+                                                <option value="8">8</option>
+                                                <option value="9">9</option>
+                                                <option value="10">10</option>
+                                            </select>
+                                            <i class="fa fa-user tm-form-element-icon tm-form-element-icon-small"></i>
+                                        </div>
+                                        <div class="form-group tm-form-element tm-form-element-2">
+                                            <select name="room" class="form-control tm-select" id="room">
+                                                <option value="">Room</option>
+                                                <option value="1">1</option>
+                                                <option value="2">2</option>
+                                                <option value="3">3</option>
+                                                <option value="4">4</option>
+                                                <option value="5">5</option>
+                                                <option value="6">6</option>
+                                                <option value="7">7</option>
+                                                <option value="8">8</option>
+                                                <option value="9">9</option>
+                                                <option value="10">10</option>
+                                            </select>
+                                            <i class="fa fa-2x fa-bed tm-form-element-icon"></i>
+                                        </div>
+                                        <div class="form-group tm-form-element tm-form-element-2">
+                                            <button type="submit" class="btn btn-primary tm-btn-search">Check Availability</button>
+                                        </div>
+                                      </div>
+                                      <div class="form-row clearfix pl-2 pr-2 tm-fx-col-xs">
+                                          <p class="tm-margin-b-0">Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+                                          <a href="#" class="ie-10-ml-auto ml-auto mt-1 tm-font-semibold tm-color-primary">Need Help?</a>
+                                      </div>
+                                </form>
+                            </div>                        
+                        </div>      
+                    </div>
+                </div>                  
+            </div>
+    </div>
+
+<div class="site-section block-15">
+      <div class="container">
+        
+
+        <div class="nonloop-block-15 owl-carousel">
+          
+
+            <div class="media-with-text p-md-4">
+              <div class="img-border-sm mb-4">
+                <a href="#" class="popup-vimeo image-play">
+                  <img src="assets/images/qc01.png" alt="" class="img-fluid">
+                </a>
+              </div>
+            
+            </div>
+          
+            <div class="media-with-text p-md-4">
+              <div class="img-border-sm mb-4">
+                <a href="#" class="popup-vimeo image-play">
+                  <img src="assets/images/qc02.png" alt="" class="img-fluid">
+                </a>
+              </div>
+             
+            </div>
+          
+            <div class="media-with-text p-md-4">
+              <div class="img-border-sm mb-4">
+                <a href="#" class="popup-vimeo image-play">
+                  <img src="assets/images/qc01.png" alt="" class="img-fluid">
+                </a>
+              </div>
+              
+            </div>
+
+            <div class="media-with-text p-md-4">
+              <div class="img-border-sm mb-4">
+                <a href="#" class="popup-vimeo image-play">
+                  <img src="assets/images/qc01.png" alt="" class="img-fluid">
+                </a>
+              </div>
+            
+            </div>
+          
+            <div class="media-with-text p-md-4">
+              <div class="img-border-sm mb-4">
+                <a href="#" class="popup-vimeo image-play">
+                  <img src="assets/images/qc01.png" alt="" class="img-fluid">
+                </a>
+              </div>
+          
+            </div>
+          
+          
+        </div>
+
+      </div>
+    </div>
+    
+
+    <div class="tieuchi container">
+            <div class="box-tieuchi">
+                <p class="pic-tieuchi">
+                    <a class="anh">
+                        <img src="images/icon02.png">
+                    </a>
+                </p>
+                <div class="info-tieuchi">
+                        <a class="name-tieuchi">8000+ khách sạn dọc Việt Nam</a>
+                        <p class="desc-tieuchi">Hàng nghìn khách sạn, giá cạnh tranh, phong phú.</p>
+                </div>
+            </div>
+            <div class="box-tieuchi">
+                <p class="pic-tieuchi">
+                    <a class="anh">
+                        <img src="assets/images/icon03.png">
+                    </a>
+                </p>
+                <div class="info-tieuchi">
+                        <a class="name-tieuchi">Giá tốt sát ngày</a>
+                        <p class="desc-tieuchi">Cam kết giá tốt nhất khi đặt gần ngày cho chuyến đi của bạn.</p>
+                </div>
+            </div>
+            <div class="box-tieuchi">
+                <p class="pic-tieuchi">
+                    <a class="anh">
+                        <img src="assets/images/icon04.png">
+                    </a>
+                </p>
+                <div class="info-tieuchi">
+                        <a class="name-tieuchi">Hỗ trợ khách hàng 24/7</a>
+                        <p class="desc-tieuchi">Chat là có, gọi là nghe, không quản đêm hôm, ngày nghỉ và ngày lễ.</p>
+                </div>
+            </div>
+            <div class="box-tieuchi">
+                <p class="pic-tieuchi">
+                    <a class="anh">
+                        <img src="assets/images/icon05.png">
+                    </a>
+                </p>
+                <div class="info-tieuchi">
+                        <a class="name-tieuchi">Thanh toán dễ dàng, đa dạng</a>
+                        <p class="desc-tieuchi">Bao gồm thêm chuyển khoản ngân hàng và tiền mặt tại cửa hàng.</p>
+                </div>
+            </div>
+        </div>
+
+    <div class="site-section bg-light">
+      <div class="container">
+        <div class="row">
+          <div class="col-md-6  mb-5 section-heading title-man">
+            <h2 class="">Đang thịnh Hành</h2>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-md-6 col-lg-3 ">
+            <div class="hotel-room text-center">
+              <a href="#" class="d-block mb-0 thumbnail"><img src="assets/images/img_1.jpg" alt="Image" class="img-fluid"></a>
+              <div class="hotel-room-body">
+                  <h3 class="heading mb-0"><a href="#">Mũi Né Bay Resort</a></h3>
+                  <p class="address">Thành phố Hồ Chí Minh</p>
+                    <div class="comment-star mb-0 mr-2">
+                      <svg width="14" height="14" fill="none" class="svgFillAll jss184" style="stroke:#FFBC39;fill:#FFBC39"><path d="M12.464 5.684a1.055 1.055 0 00-.849-.719L9.078 4.6 7.94 2.31a1.05 1.05 0 00-1.88 0L4.925 4.598l-2.536.367a1.057 1.057 0 00-.87 1.292c.047.191.148.365.29.502L3.64 8.534l-.433 2.51a1.05 1.05 0 001.521 1.107l2.272-1.188 2.273 1.19a1.05 1.05 0 001.522-1.108l-.435-2.51 1.832-1.776a1.05 1.05 0 00.271-1.075z" fill="#FFBC39"></path></svg>
+                      <svg width="14" height="14" fill="none" class="svgFillAll jss184" style="stroke:#FFBC39;fill:#FFBC39"><path d="M12.464 5.684a1.055 1.055 0 00-.849-.719L9.078 4.6 7.94 2.31a1.05 1.05 0 00-1.88 0L4.925 4.598l-2.536.367a1.057 1.057 0 00-.87 1.292c.047.191.148.365.29.502L3.64 8.534l-.433 2.51a1.05 1.05 0 001.521 1.107l2.272-1.188 2.273 1.19a1.05 1.05 0 001.522-1.108l-.435-2.51 1.832-1.776a1.05 1.05 0 00.271-1.075z" fill="#FFBC39"></path></svg>
+                      <svg width="14" height="14" fill="none" class="svgFillAll jss184" style="stroke:#FFBC39;fill:#FFBC39"><path d="M12.464 5.684a1.055 1.055 0 00-.849-.719L9.078 4.6 7.94 2.31a1.05 1.05 0 00-1.88 0L4.925 4.598l-2.536.367a1.057 1.057 0 00-.87 1.292c.047.191.148.365.29.502L3.64 8.534l-.433 2.51a1.05 1.05 0 001.521 1.107l2.272-1.188 2.273 1.19a1.05 1.05 0 001.522-1.108l-.435-2.51 1.832-1.776a1.05 1.05 0 00.271-1.075z" fill="#FFBC39"></path></svg>
+                      <i class="bi bi-star"></i>
+                      <i class="bi bi-star"></i>
+                    </div>
+                  <p class="price-new">350.000đ </p>
+                  <p class="price-old">250.000đ </p>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-6 col-lg-3 ">
+            <div class="hotel-room text-center">
+              <a href="#" class="d-block mb-0 thumbnail"><img src="assets/images/img_2.jpg" alt="Image" class="img-fluid"></a>
+              <div class="hotel-room-body">
+                   <h3 class="heading mb-0"><a href="#">Mũi Né Bay Resort</a></h3>
+                  <p class="address">Thành phố Hồ Chí Minh</p>
+                   <div class="comment-star mb-0 mr-2">
+                      <i class="bi bi-star"></i>
+                      <i class="bi bi-star"></i>
+                      <i class="bi bi-star"></i>
+                      <i class="bi bi-star"></i>
+                    </div>
+                  <p class="price-new">350.000đ </p>
+                  <p class="price-old">250.000đ</p>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-6 col-lg-3 ">
+            <div class="hotel-room text-center">
+              <a href="#" class="d-block mb-0 thumbnail"><img src="assets/images/img_3.jpg" alt="Image" class="img-fluid"></a>
+              <div class="hotel-room-body">
+                   <h3 class="heading mb-0"><a href="#">Mũi Né Bay Resort</a></h3>
+                  <p class="address">Thành phố Hồ Chí Minh</p>
+                   <div class="comment-star mb-0 mr-2">
+                      <i class="bi bi-star"></i>
+                      <i class="bi bi-star"></i>
+                      <i class="bi bi-star"></i>
+                      <i class="bi bi-star"></i>
+                    </div>
+                    <p class="price-new">350.000đ </p>
+                  <p class="price-old">250.000đ </p>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-md-6 col-lg-3 ">
+            <div class="hotel-room text-center">
+              <a href="#" class="d-block mb-0 thumbnail"><img src="assets/images/img_1.jpg" alt="Image" class="img-fluid"></a>
+              <div class="hotel-room-body">
+                   <h3 class="heading mb-0"><a href="#">Mũi Né Bay Resort</a></h3>
+                  <p class="address">Thành phố Hồ Chí Minh</p>
+                 <div class="comment-star mb-0 mr-2">
+                      <i class="bi bi-star"></i>
+                      <i class="bi bi-star"></i>
+                      <i class="bi bi-star"></i>
+                      <i class="bi bi-star"></i>
+                    </div> 
+                    <p class="price-new">350.000đ </p> 
+                  <p class="price-old">250.000đ </p>
+              </div>
+            </div>
+          </div>
+
+          
+        </div>
+      </div>
+    </div>
+     <div class="site-section bg-light">
+      <div class="container">
+        <div class="row">
+          <div class="col-md-12   section-heading title-man">
+            <h2 class="">Khách Sạn </h2>
+      
+          <span>Phú Quốc</span>
+          <span>Phú Quốc</span>
+          <span>Phú Quốc</span>
+          <span>Phú Quốc</span>
+          <span>Phú Quốc</span>
+          <span>Phú Quốc</span>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-md-6 col-lg-3 mb-5 ">
+            <div class="hotel-room text-center">
+              <a href="#" class="d-block mb-0 thumbnail"><img src="assets/images/img_1.jpg" alt="Image" class="img-fluid"></a>
+              <div class="hotel-room-body">
+                <h3 class="heading mb-0"><a href="#">Mũi Né Bay Resort</a></h3>
+                 <p class="address">Thành phố Hồ Chí Minh</p>
+               <p class="price-new">350.000đ </p>
+               <p class="price-old">250.000đ </p>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-6 col-lg-3 mb-5 ">
+            <div class="hotel-room text-center">
+              <a href="#" class="d-block mb-0 thumbnail"><img src="assets/images/img_2.jpg" alt="Image" class="img-fluid"></a>
+              <div class="hotel-room-body">
+                <h3 class="heading mb-0"><a href="#">Mũi Né Bay Resort</a></h3>
+                  <p class="address">Thành phố Hồ Chí Minh</p>
+                  <p class="price-new">350.000đ </p>
+                  <p class="price-old">250.000đ</p>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-6 col-lg-3 mb-5 ">
+            <div class="hotel-room text-center">
+              <a href="#" class="d-block mb-0 thumbnail"><img src="assets/images/img_3.jpg" alt="Image" class="img-fluid"></a>
+              <div class="hotel-room-body">
+                <h3 class="heading mb-0"><a href="#">Mũi Né Bay Resort</a></h3>
+                  <p class="address">Thành phố Hồ Chí Minh</p>
+                  <p class="price-new">350.000đ </p>
+                  <p class="price-old">250.000đ </p>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-6 col-lg-3 mb-5 ">
+            <div class="hotel-room text-center">
+              <a href="#" class="d-block mb-0 thumbnail"><img src="assets/images/img_1.jpg" alt="Image" class="img-fluid"></a>
+              <div class="hotel-room-body">
+                <h3 class="heading mb-0"><a href="#">Mũi Né Bay Resort</a></h3>
+                  <p class="address">Thành phố Hồ Chí Minh</p>
+                  <p class="price-new">350.000đ </p>
+                  <p class="price-old">250.000đ </p>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-6 col-lg-3 mb-5 ">
+            <div class="hotel-room text-center">
+              <a href="#" class="d-block mb-0 thumbnail"><img src="assets/images/img_1.jpg" alt="Image" class="img-fluid"></a>
+              <div class="hotel-room-body">
+                <h3 class="heading mb-0"><a href="#">Mũi Né Bay Resort</a></h3>
+                 <p class="address">Thành phố Hồ Chí Minh</p>
+               <p class="price-new">350.000đ </p>
+               <p class="price-old">250.000đ </p>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-6 col-lg-3 mb-5 ">
+            <div class="hotel-room text-center">
+              <a href="#" class="d-block mb-0 thumbnail"><img src="assets/images/img_2.jpg" alt="Image" class="img-fluid"></a>
+              <div class="hotel-room-body">
+                <h3 class="heading mb-0"><a href="#">Mũi Né Bay Resort</a></h3>
+                  <p class="address">Thành phố Hồ Chí Minh</p>
+                  <p class="price-new">350.000đ </p>
+                  <p class="price-old">250.000đ</p>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-6 col-lg-3 mb-5 ">
+            <div class="hotel-room text-center">
+              <a href="#" class="d-block mb-0 thumbnail"><img src="assets/images/img_3.jpg" alt="Image" class="img-fluid"></a>
+              <div class="hotel-room-body">
+                <h3 class="heading mb-0"><a href="#">Mũi Né Bay Resort</a></h3>
+                  <p class="address">Thành phố Hồ Chí Minh</p>
+                  <p class="price-new">350.000đ </p>
+                  <p class="price-old">250.000đ </p>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-6 col-lg-3 mb-5 ">
+            <div class="hotel-room text-center">
+              <a href="#" class="d-block mb-0 thumbnail"><img src="assets/images/img_1.jpg" alt="Image" class="img-fluid"></a>
+              <div class="hotel-room-body">
+                <h3 class="heading mb-0"><a href="#">Mũi Né Bay Resort</a></h3>
+                  <p class="address">Thành phố Hồ Chí Minh</p>
+                  <p class="price-new">350.000đ </p>
+                  <p class="price-old">250.000đ </p>
+              </div>
+            </div>
+          </div> 
+          <div class="col-md-6 col-lg-3 mb-5 ">
+            <div class="hotel-room text-center">
+              <a href="#" class="d-block mb-0 thumbnail"><img src="assets/images/img_1.jpg" alt="Image" class="img-fluid"></a>
+              <div class="hotel-room-body">
+                <h3 class="heading mb-0"><a href="#">Mũi Né Bay Resort</a></h3>
+                 <p class="address">Thành phố Hồ Chí Minh</p>
+               <p class="price-new">350.000đ </p>
+               <p class="price-old">250.000đ </p>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-6 col-lg-3 mb-5 ">
+            <div class="hotel-room text-center">
+              <a href="#" class="d-block mb-0 thumbnail"><img src="assets/images/img_2.jpg" alt="Image" class="img-fluid"></a>
+              <div class="hotel-room-body">
+                <h3 class="heading mb-0"><a href="#">Mũi Né Bay Resort</a></h3>
+                  <p class="address">Thành phố Hồ Chí Minh</p>
+                  <p class="price-new">350.000đ </p>
+                  <p class="price-old">250.000đ</p>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-6 col-lg-3 mb-5 ">
+            <div class="hotel-room text-center">
+              <a href="#" class="d-block mb-0 thumbnail"><img src="assets/images/img_3.jpg" alt="Image" class="img-fluid"></a>
+              <div class="hotel-room-body">
+                <h3 class="heading mb-0"><a href="#">Mũi Né Bay Resort</a></h3>
+                  <p class="address">Thành phố Hồ Chí Minh</p>
+                  <p class="price-new">350.000đ </p>
+                  <p class="price-old">250.000đ </p>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-6 col-lg-3 mb-5 ">
+            <div class="hotel-room text-center">
+              <a href="#" class="d-block mb-0 thumbnail"><img src="assets/images/img_1.jpg" alt="Image" class="img-fluid"></a>
+              <div class="hotel-room-body">
+                <h3 class="heading mb-0"><a href="#">Mũi Né Bay Resort</a></h3>
+                  <p class="address">Thành phố Hồ Chí Minh</p>
+                  <p class="price-new">350.000đ </p>
+                  <p class="price-old">250.000đ </p>
+              </div>
+            </div>
+          </div>  
+        </div>
+      </div>
+    </div>
+
+    <div class="MuiBox-root jss128 jss115">
+      <div class="MuiBox-root jss129 jss116 container">
+        <div class="MuiBox-root jss30">
+          <p class="MuiTypography-root jss25 MuiTypography-body2"> Khách sạn theo địa điểm </p>
+        </div>
+        <div class="jss117 slick-initialized box-add">
+          <div class=" box1">
+            <div class="strick-track">
+              <img src="assets/images/ha.png">
+            </div>
+            <p>Phú Quốc</p>
+          </div>
+            <div class="box1">
+            <div class="strick-track">
+              <img src="assets/images/ha.png">
+            </div>
+            <p>Phú Quốc</p>
+          </div>
+            <div class="box1">
+            <div class="strick-track">
+              <img src="assets/images/ha.png">
+            </div>
+            <p>Phú Quốc</p>
+          </div>
+            <div class="box1">
+            <div class="strick-track">
+              <img src="assets/images/ha.png">
+            </div>
+            <p>Phú Quốc</p>
+          </div>
+          <div class="box1">
+            <div class="strick-track">
+              <img src="assets/images/ha.png">
+            </div>
+            <p>Phú Quốc</p>
+          </div>
+          <div class="box1">
+              <div class="strick-track">
+                <img src="assets/images/ha.png">
+              </div>
+              <p>Phú Quốc</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
