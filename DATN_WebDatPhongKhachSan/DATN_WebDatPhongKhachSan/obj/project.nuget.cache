@@ -1,5 +1,6 @@
 {
   "version": 2,
+<<<<<<< HEAD
   "dgSpecHash": "4bKTM5bZRnYHlBI98+5pzMD5vgigm5P1gfPznovhH3SuKxMC154TkfdqPVNmIr7Sfd6SIM3pZoGx3om6fNTzww==",
   "success": true,
   "projectFilePath": "E:\\DATN\\DATN_NhomPhuc_Duy_WebsiteDatPhongKhachSan\\DATN_WebDatPhongKhachSan\\DATN_WebDatPhongKhachSan\\DATN_WebDatPhongKhachSan.csproj",
@@ -102,5 +103,11 @@
     "C:\\Users\\ACER\\.nuget\\packages\\system.xml.xmldocument\\4.3.0\\system.xml.xmldocument.4.3.0.nupkg.sha512",
     "C:\\Users\\ACER\\.nuget\\packages\\system.xml.xmlserializer\\4.3.0\\system.xml.xmlserializer.4.3.0.nupkg.sha512"
   ],
+=======
+  "dgSpecHash": "di/GeWvDfGArQGrb2wU2fessg2QTJEFIwQpS1b/m7XLYZxmkilBLit59nouGxghRSCqs0RA5F/4XeowP9W1/Uw==",
+  "success": true,
+  "projectFilePath": "D:\\GIT\\DATN_NhomPhuc_Duy_WebsiteDatPhongKhachSan206\\DATN_WebDatPhongKhachSan\\DATN_WebDatPhongKhachSan\\DATN_WebDatPhongKhachSan.csproj",
+  "expectedPackageFiles": [],
+>>>>>>> 223a038caee20c23b1c334ddf0f101f2c25041a3
   "logs": []
 }
