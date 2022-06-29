@@ -19,7 +19,7 @@ namespace DATN_WebDatPhongKhachSan.Data
         public DbSet<Room> Rooms { get; set; }
         public DbSet<RoomType> RoomTypes { get; set; }
         public DbSet<RentalType> RentalTypes { get; set; }
-        public DbSet<Utilities> Utilitiess { get; set; }
+        public DbSet<Tag> Utilitiess { get; set; }
         public DbSet<Invoice> Invoices { get; set; }
         public DbSet<Favorite> Favorites { get; set; }
         public DbSet<PaymentAccount> PaymentAccounts { get; set; }

@@ -7148,25 +7148,32 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\vophu\\.nuget\\packages\\": {}
+    "C:\\Users\\HoangPhuc\\.nuget\\packages\\": {},
+    "C:\\Program Files (x86)\\Microsoft\\Xamarin\\NuGet\\": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "D:\\GIT\\DATN\\DATN_WebDatPhongKhachSan\\DATN_WebDatPhongKhachSan\\DATN_WebDatPhongKhachSan.csproj",
+      "projectUniqueName": "D:\\DATN\\DATN_NhomPhuc_Duy_WebsiteDatPhongKhachSan\\DATN_WebDatPhongKhachSan\\DATN_WebDatPhongKhachSan\\DATN_WebDatPhongKhachSan.csproj",
       "projectName": "DATN_WebDatPhongKhachSan",
-      "projectPath": "D:\\GIT\\DATN\\DATN_WebDatPhongKhachSan\\DATN_WebDatPhongKhachSan\\DATN_WebDatPhongKhachSan.csproj",
-      "packagesPath": "C:\\Users\\vophu\\.nuget\\packages\\",
-      "outputPath": "D:\\GIT\\DATN\\DATN_WebDatPhongKhachSan\\DATN_WebDatPhongKhachSan\\obj\\",
+      "projectPath": "D:\\DATN\\DATN_NhomPhuc_Duy_WebsiteDatPhongKhachSan\\DATN_WebDatPhongKhachSan\\DATN_WebDatPhongKhachSan\\DATN_WebDatPhongKhachSan.csproj",
+      "packagesPath": "C:\\Users\\HoangPhuc\\.nuget\\packages\\",
+      "outputPath": "D:\\DATN\\DATN_NhomPhuc_Duy_WebsiteDatPhongKhachSan\\DATN_WebDatPhongKhachSan\\DATN_WebDatPhongKhachSan\\obj\\",
       "projectStyle": "PackageReference",
+      "fallbackFolders": [
+        "C:\\Program Files (x86)\\Microsoft\\Xamarin\\NuGet\\"
+      ],
       "configFilePaths": [
-        "C:\\Users\\vophu\\AppData\\Roaming\\NuGet\\NuGet.Config",
-        "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+        "C:\\Users\\HoangPhuc\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Program Files (x86)\\NuGet\\Config\\DevExpress 20.1.config",
+        "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config",
+        "C:\\Program Files (x86)\\NuGet\\Config\\Xamarin.Offline.config"
       ],
       "originalTargetFrameworks": [
         "net5.0"
       ],
       "sources": {
+        "C:\\Program Files (x86)\\DevExpress 20.1\\Components\\System\\Components\\Packages": {},
         "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
         "https://api.nuget.org/v3/index.json": {}
       },
@@ -7219,7 +7226,7 @@
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.106\\RuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.203\\RuntimeIdentifierGraph.json"
       }
     }
   }
