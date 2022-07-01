@@ -1,34 +1,32 @@
 {
   "format": 1,
   "restore": {
-    "D:\\DATN\\DATN_NhomPhuc_Duy_WebsiteDatPhongKhachSan\\DATN_WebDatPhongKhachSan\\DATN_WebDatPhongKhachSan\\DATN_WebDatPhongKhachSan.csproj": {}
+    "E:\\DATN\\DATN_NhomPhuc_Duy_WebsiteDatPhongKhachSan\\DATN_WebDatPhongKhachSan\\DATN_WebDatPhongKhachSan\\DATN_WebDatPhongKhachSan.csproj": {}
   },
   "projects": {
-    "D:\\DATN\\DATN_NhomPhuc_Duy_WebsiteDatPhongKhachSan\\DATN_WebDatPhongKhachSan\\DATN_WebDatPhongKhachSan\\DATN_WebDatPhongKhachSan.csproj": {
+    "E:\\DATN\\DATN_NhomPhuc_Duy_WebsiteDatPhongKhachSan\\DATN_WebDatPhongKhachSan\\DATN_WebDatPhongKhachSan\\DATN_WebDatPhongKhachSan.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "D:\\DATN\\DATN_NhomPhuc_Duy_WebsiteDatPhongKhachSan\\DATN_WebDatPhongKhachSan\\DATN_WebDatPhongKhachSan\\DATN_WebDatPhongKhachSan.csproj",
+        "projectUniqueName": "E:\\DATN\\DATN_NhomPhuc_Duy_WebsiteDatPhongKhachSan\\DATN_WebDatPhongKhachSan\\DATN_WebDatPhongKhachSan\\DATN_WebDatPhongKhachSan.csproj",
         "projectName": "DATN_WebDatPhongKhachSan",
-        "projectPath": "D:\\DATN\\DATN_NhomPhuc_Duy_WebsiteDatPhongKhachSan\\DATN_WebDatPhongKhachSan\\DATN_WebDatPhongKhachSan\\DATN_WebDatPhongKhachSan.csproj",
-        "packagesPath": "C:\\Users\\HoangPhuc\\.nuget\\packages\\",
-        "outputPath": "D:\\DATN\\DATN_NhomPhuc_Duy_WebsiteDatPhongKhachSan\\DATN_WebDatPhongKhachSan\\DATN_WebDatPhongKhachSan\\obj\\",
+        "projectPath": "E:\\DATN\\DATN_NhomPhuc_Duy_WebsiteDatPhongKhachSan\\DATN_WebDatPhongKhachSan\\DATN_WebDatPhongKhachSan\\DATN_WebDatPhongKhachSan.csproj",
+        "packagesPath": "C:\\Users\\ACER\\.nuget\\packages\\",
+        "outputPath": "E:\\DATN\\DATN_NhomPhuc_Duy_WebsiteDatPhongKhachSan\\DATN_WebDatPhongKhachSan\\DATN_WebDatPhongKhachSan\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
-          "C:\\Program Files (x86)\\Microsoft\\Xamarin\\NuGet\\"
+          "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
         ],
         "configFilePaths": [
-          "C:\\Users\\HoangPhuc\\AppData\\Roaming\\NuGet\\NuGet.Config",
-          "C:\\Program Files (x86)\\NuGet\\Config\\DevExpress 20.1.config",
-          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config",
-          "C:\\Program Files (x86)\\NuGet\\Config\\Xamarin.Offline.config"
+          "C:\\Users\\ACER\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
           "net5.0"
         ],
         "sources": {
-          "C:\\Program Files (x86)\\DevExpress 20.1\\Components\\System\\Components\\Packages": {},
-          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
-          "https://api.nuget.org/v3/index.json": {}
+          "https://api.nuget.org/v3/index.json": {},
+          "https://nuget.devexpress.com/6VcOaaDXySpSOKABbtmNdD5Fp7cl7lyFlmc8j6hcM2iiu6cKZK/api": {}
         },
         "frameworks": {
           "net5.0": {
@@ -79,7 +77,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.203\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.408\\RuntimeIdentifierGraph.json"
         }
       }
     }

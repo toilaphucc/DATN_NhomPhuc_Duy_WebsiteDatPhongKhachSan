@@ -25,7 +25,7 @@ namespace DATN_WebDatPhongKhachSan
         public void ConfigureServices(IServiceCollection services)
         {
             services.AddControllersWithViews();
-            services.AddDbContext<DatPhongKhachSanContext>(options =>options.UseSqlServer(Configuration.GetConnectionString("DatPhongKhachSan")));
+            services.AddDbContext<DatPhongKhachSanContext>(options =>options.UseSqlServer(Configuration.GetConnectionString("BookingHotel")));
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.

@@ -13,7 +13,7 @@ namespace DATN_WebDatPhongKhachSan.Models
         public Guid FavoriteID { get; set; }
         [Display(Name = "Mã phòng")]
         public Guid RoomID { get; set; }
-        [Display(Name = "Mã tài khoản")]
+        [Display(Name = "Mã khách")]
         public Guid UserID { get; set; }
         [Display(Name = "Ngày thêm")]
         public DateTime CreatedOn { get; set; }

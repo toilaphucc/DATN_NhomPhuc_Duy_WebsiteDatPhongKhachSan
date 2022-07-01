@@ -2,19 +2,18 @@
 
 @{
     ViewData["Title"] = "Index";
+    Layout = "~/Views/Shared/_layout_admin.cshtml";
 }
-@{
-    Layout = "_layout_admin";
-}
-<h1>Index</h1>
+
+<h1>Quản lý tài khoản</h1>
 
 <p>
-    <a asp-action="Create">Create New</a>
+    <a asp-action="Create" style="text-align:center">Thêm tài khoản</a>
 </p>
 <table class="table">
     <thead>
-        <tr>
-            <th>
+        <tr >
+            <th >
                 @Html.DisplayNameFor(model => model.UserName)
             </th>
             <th>

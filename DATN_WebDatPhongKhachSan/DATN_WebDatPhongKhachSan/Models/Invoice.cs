@@ -25,6 +25,8 @@ namespace DATN_WebDatPhongKhachSan.Models
         public DateTime CheckOutDate { get; set; }
         [Display(Name = "Số ngày ở")]
         public int Count { get; set; }
+        [Display(Name = "Mã tài khoản thanh toán")]
+        public Guid PaymentAccountID { get; set; }
         [Display(Name = "Số lượng người thuê")]
         public int AmountPeople { get; set; }
         [Display(Name = "Ngày lập hóa đơn")]

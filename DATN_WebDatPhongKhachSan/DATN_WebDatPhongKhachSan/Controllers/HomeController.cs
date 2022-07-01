@@ -1,4 +1,5 @@
 ﻿using DATN_WebDatPhongKhachSan.Models;
+using DATN_WebDatPhongKhachSan.Data;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Logging;
 using System;
@@ -6,6 +7,10 @@ using System.Collections.Generic;
 using System.Diagnostics;
 using System.Linq;
 using System.Threading.Tasks;
+using System.IO;
+using Microsoft.AspNetCore.Hosting;
+using Microsoft.AspNetCore.Mvc.Rendering;
+using Microsoft.EntityFrameworkCore;
 
 namespace DATN_WebDatPhongKhachSan.Controllers
 {
@@ -17,7 +22,6 @@ namespace DATN_WebDatPhongKhachSan.Controllers
         {
             _logger = logger;
         }
-
         public IActionResult Index()
         {
             return View();

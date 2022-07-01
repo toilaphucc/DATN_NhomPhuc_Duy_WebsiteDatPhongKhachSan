@@ -27,7 +27,7 @@ namespace DATN_WebDatPhongKhachSan.Models
         public string Phone { get; set; }
         [Display(Name = "Quyền admin")]
         public bool IsAdmin { get; set; }
-        [Display(Name = "Tình trạng tài khoản")]
+        [Display(Name = "Trạng thái tài khoản")]
         public bool IsActive { get; set; }
         [Display(Name = "Ngày tạo")]
         public DateTime CreatedOn { get; set; }
