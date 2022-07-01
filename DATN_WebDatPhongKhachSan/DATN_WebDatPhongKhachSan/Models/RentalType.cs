@@ -11,9 +11,9 @@ namespace DATN_WebDatPhongKhachSan.Models
         [Key]
         [Display(Name = "Mã hình thức thuê")]
         public Guid RentalTypeID { get; set; }
-        [Display(Name = "Hình thức thuê")]
+        [Display(Name = "Tên hình thức thuê")]
         public string RentalTypeName { get; set; }
-        [Display(Name = "Chi tiết")]
+        [Display(Name = "Mô tả")]
         public string Detail { get; set; }
         [Display(Name = "Ngày tạo")]
         public DateTime CreatedOn { get; set; }

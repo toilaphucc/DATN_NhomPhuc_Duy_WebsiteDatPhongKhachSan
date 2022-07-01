@@ -13,13 +13,13 @@ namespace DATN_WebDatPhongKhachSan.Models
         public Guid RoomTypeID { get; set; }
         [Display(Name = "Tên loại phòng")]
         public string RoomTypeName { get; set; }
-        [Display(Name = "Chi tiết")]
+        [Display(Name = "Mô tả")]
         public string Detail { get; set; }
         [Display(Name = "Ngày tạo")]
         public DateTime CreatedOn { get; set; }
         [Display(Name = "Ngày chỉnh sửa")]
         public DateTime ModifiedOn { get; set; }
 
-        public List<Room> Rooms { get; set; }
+        //public List<Room> Rooms { get; set; }
     }
 }

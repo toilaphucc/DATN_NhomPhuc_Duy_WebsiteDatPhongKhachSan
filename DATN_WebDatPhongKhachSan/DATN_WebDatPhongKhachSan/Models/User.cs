@@ -33,7 +33,7 @@ namespace DATN_WebDatPhongKhachSan.Models
         public DateTime CreatedOn { get; set; }
         [Display(Name = "Ngày chỉnh sửa")]
         public DateTime ModifiedOn { get; set; }
-        public List<Owner> Owners { get; set; }
-        public List<Customer> Customers { get; set; }
+        //public List<Owner> Owners { get; set; }
+        //public List<Customer> Customers { get; set; }
     }
 }

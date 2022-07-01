@@ -13,7 +13,6 @@ namespace DATN_WebDatPhongKhachSan.Models
         public Guid RoomID { get; set; }
         [Display(Name = "Mã tài khoản chủ phòng")]
         public Guid UserID { get; set; }
-        public User User { get; set; }
         [Display(Name = "Mã định danh phòng")]
         public string RoomCode { get; set; }
         [Display(Name = "Tên phòng")]
@@ -30,7 +29,9 @@ namespace DATN_WebDatPhongKhachSan.Models
         public bool IsActive { get; set; }
         [Display(Name = "Mã loại phòng")]
         public Guid RoomTypeID { get; set; }
-        public RoomType RoomType { get; set; }
+        [Display(Name = "Mã tiện ích phòng")]
+        public Guid TagID { get; set; }
+        //public RoomType RoomType { get; set; }
         //public Guid RentalTypeID { get; set; }
         //[Display(Name = "Mã tiện ích phòng")]
         //public Guid TagID { get; set; }
@@ -38,6 +39,6 @@ namespace DATN_WebDatPhongKhachSan.Models
         public DateTime CreatedOn { get; set; }
         [Display(Name = "Ngày chỉnh sửa")]
         public DateTime ModifiedOn { get; set; }
-        public List<Tag> Tags { get; set; }
+        //public List<Tag> Tags { get; set; }
     }
 }
