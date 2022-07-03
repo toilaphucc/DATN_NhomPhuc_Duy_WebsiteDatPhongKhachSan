@@ -20,6 +20,28 @@ namespace DATN_WebDatPhongKhachSan.Controllers
         }
 
         // GET: Rooms
+        public IActionResult DanhSachPhongHome()
+        {
+            //var viewroom = _context.Rooms;
+            //var lstroom = from room in _context.Rooms
+            //              join roomtype in _context.RoomTypes on
+            //                room.RoomTypeID equals roomtype.RoomTypeID
+            //              join owner in _context.Owners on
+            //              room.OwnerID equals owner.OwnerID
+            //              select new
+            //              {
+            //                  Name = room.Name,
+            //                  Detail = room.Detail,
+            //                  Price = room.Price,
+            //                  Image = room.Image,
+            //                  Address = owner.Address,
+            //                  Amount = room.AmountRoom,
+            //                  RoomType = roomtype.RoomTypeName
+            //              };
+            var viewroom = _context.Rooms.OrderByDescending(p => p.RoomID).Take(6).ToList();
+
+            return View(viewroom);
+        }
         public async Task<IActionResult> Index()
         {
             return View(await _context.Rooms.ToListAsync());

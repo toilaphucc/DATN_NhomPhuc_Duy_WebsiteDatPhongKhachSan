@@ -11,13 +11,13 @@ using System.IO;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.Mvc.Rendering;
 using Microsoft.EntityFrameworkCore;
-
+using DATN_WebDatPhongKhachSan.Data;
 namespace DATN_WebDatPhongKhachSan.Controllers
 {
     public class HomeController : Controller
     {
         private readonly ILogger<HomeController> _logger;
-
+        private readonly DatPhongKhachSanContext _context;
         public HomeController(ILogger<HomeController> logger)
         {
             _logger = logger;
@@ -26,7 +26,28 @@ namespace DATN_WebDatPhongKhachSan.Controllers
         {
             return View();
         }
+        public IActionResult DanhSachPhongHome()
+        {
+            //var viewroom = _context.Rooms;
+            //var lstroom = from room in _context.Rooms
+            //              join roomtype in _context.RoomTypes on
+            //                room.RoomTypeID equals roomtype.RoomTypeID
+            //              join owner in _context.Owners on
+            //              room.OwnerID equals owner.OwnerID
+            //              select new
+            //              {
+            //                  Name = room.Name,
+            //                  Detail = room.Detail,
+            //                  Price = room.Price,
+            //                  Image = room.Image,
+            //                  Address = owner.Address,
+            //                  Amount = room.AmountRoom,
+            //                  RoomType = roomtype.RoomTypeName
+            //              };
+            var viewroom = _context.Rooms.OrderByDescending(p => p.RoomID).Take(6).ToList();
 
+            return View(viewroom);
+        }
         public IActionResult Privacy()
         {
             return View();

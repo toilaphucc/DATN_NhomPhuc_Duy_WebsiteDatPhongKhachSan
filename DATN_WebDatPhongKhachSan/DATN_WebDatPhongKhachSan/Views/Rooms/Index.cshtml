@@ -100,14 +100,15 @@
     }
         </tbody>
     </table>*@
-@*@foreach (var room in Model)
+<div class="row">
+    @foreach (var room in Model)
     {
         <div class="col-sm-3">
             <div class="product-image-wrapper" width="300" height="300">
                 <div class="single-products">
                     <div class="productinfo text-center">
                         <img src="~/assets/images/@room.Image" width="200" height="200" alt="" style="border:2px" />
-                        <h3><a style="color: #ee5057" asp-action="ChiTietSanPham" asp-route-id="@room.RoomID" asp-controller="Rooms">@room.Name</a></h3>
+                        <h3><a style="color: #ee5057" asp-action="DanhSachPhongHome" asp-route-id="@room.RoomID" asp-controller="Rooms">@room.Name</a></h3>
                         <p>@room.Price</p>
                         <p style="margin-left:5px">@room.Detail</p>
                         <a asp- href="#" class="btn btn-default add-to-cart"><i class="fa fa-shopping-cart"></i>Đặt ngay</a>
@@ -118,27 +119,31 @@
                 </div>
             </div>
         </div>
-    }*@
-
-
-<div class="tieuchi container">
-    @foreach (var room in Model)
-    {
-        <div class="box-tieuchi">
-            <p class="pic-tieuchi">
-                <a class="anh">
-                    <img width="200" height="200" src="~/assets/images/@room.Image">
-                </a>
-            </p>
-            <div class="info-tieuchi">
-                <a class="name-tieuchi">@room.Name</a>
-                <p class="desc-tieuchi">@room.Detail</p>
-                <a class="name-tieuchi">@room.Price</a>
-            </div>
-        </div>
     }
-    </div>
- 
-    
+</div>
+
+    @*Đặt danh sách các phòng vô đây*@
+
+    @*@foreach (var room in Model)
+        {
+            <div class="col-sm-4">
+                <div class="product-image-wrapper">
+                    <div class="single-products">
+                        <div class="productinfo text-center">
+                            <img src="~/assets/images/@room.Image" width="300" height="300" alt="" />
+                            <h2><a style="color:orange" asp-action="DanhSachPhongHome" asp-route-id="@room.RoomID" asp-controller="Rooms">@room.Name</a></h2>
+                            <p>@room.Price</p>
+                            <a asp- href="#" class="btn btn-default add-to-cart"><i class="fa fa-shopping-cart"></i>Thêm vào giỏ</a>
+                        </div>
+                    </div>
+                    <div class="choose">
+
+                    </div>
+                </div>
+            </div>
+        }*@
+
+
+
 
 
