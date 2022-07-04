@@ -10,44 +10,22 @@ using DATN_WebDatPhongKhachSan.Models;
 
 namespace DATN_WebDatPhongKhachSan.Controllers
 {
-    public class RoomsController : Controller
+    public class OwnersController : Controller
     {
         private readonly DatPhongKhachSanContext _context;
 
-        public RoomsController(DatPhongKhachSanContext context)
+        public OwnersController(DatPhongKhachSanContext context)
         {
             _context = context;
         }
 
-        // GET: Rooms
-        public IActionResult HomeIndex()
-        {
-            var viewroom = _context.Rooms;
-            var lstroom = from room in _context.Rooms
-                          join roomtype in _context.RoomTypes on
-                            room.RoomTypeID equals roomtype.RoomTypeID
-                          join owner in _context.Owners on
-                          room.OwnerID equals owner.OwnerID
-                          select new
-                          {
-                              Name = room.Name,
-                              Detail = room.Detail,
-                              Price = room.Price,
-                              Image = room.Image,
-                              Address = owner.Address,
-                              Amount = room.AmountRoom,
-                              RoomType = roomtype.RoomTypeName
-                          };
-            //var viewroom = _context.Rooms.OrderByDescending(p => p.RoomID).Take(6).ToList();
-
-            return View(viewroom);
-        }
+        // GET: Owners
         public async Task<IActionResult> Index()
         {
-            return View(await _context.Rooms.ToListAsync());
+            return View(await _context.Owners.ToListAsync());
         }
 
-        // GET: Rooms/Details/5
+        // GET: Owners/Details/5
         public async Task<IActionResult> Details(Guid? id)
         {
             if (id == null)
@@ -55,40 +33,40 @@ namespace DATN_WebDatPhongKhachSan.Controllers
                 return NotFound();
             }
 
-            var room = await _context.Rooms
-                .FirstOrDefaultAsync(m => m.RoomID == id);
-            if (room == null)
+            var owner = await _context.Owners
+                .FirstOrDefaultAsync(m => m.OwnerID == id);
+            if (owner == null)
             {
                 return NotFound();
             }
 
-            return View(room);
+            return View(owner);
         }
 
-        // GET: Rooms/Create
+        // GET: Owners/Create
         public IActionResult Create()
         {
             return View();
         }
 
-        // POST: Rooms/Create
+        // POST: Owners/Create
         // To protect from overposting attacks, enable the specific properties you want to bind to.
         // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Create([Bind("RoomID,OwnerID,RoomCode,Price,Detail,Image,AmountRoom,IsActive,RoomTypeID,TagID,Name,CreatedOn,ModifiedOn")] Room room)
+        public async Task<IActionResult> Create([Bind("OwnerID,UserID,Address,Ward,District,City,IsHotel,HotelName,CreatedOn,ModifiedOn")] Owner owner)
         {
             if (ModelState.IsValid)
             {
-                room.RoomID = Guid.NewGuid();
-                _context.Add(room);
+                owner.OwnerID = Guid.NewGuid();
+                _context.Add(owner);
                 await _context.SaveChangesAsync();
                 return RedirectToAction(nameof(Index));
             }
-            return View(room);
+            return View(owner);
         }
 
-        // GET: Rooms/Edit/5
+        // GET: Owners/Edit/5
         public async Task<IActionResult> Edit(Guid? id)
         {
             if (id == null)
@@ -96,22 +74,22 @@ namespace DATN_WebDatPhongKhachSan.Controllers
                 return NotFound();
             }
 
-            var room = await _context.Rooms.FindAsync(id);
-            if (room == null)
+            var owner = await _context.Owners.FindAsync(id);
+            if (owner == null)
             {
                 return NotFound();
             }
-            return View(room);
+            return View(owner);
         }
 
-        // POST: Rooms/Edit/5
+        // POST: Owners/Edit/5
         // To protect from overposting attacks, enable the specific properties you want to bind to.
         // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Edit(Guid id, [Bind("RoomID,OwnerID,RoomCode,Price,Detail,Image,AmountRoom,IsActive,RoomTypeID,TagID,Name,CreatedOn,ModifiedOn")] Room room)
+        public async Task<IActionResult> Edit(Guid id, [Bind("OwnerID,UserID,Address,Ward,District,City,IsHotel,HotelName,CreatedOn,ModifiedOn")] Owner owner)
         {
-            if (id != room.RoomID)
+            if (id != owner.OwnerID)
             {
                 return NotFound();
             }
@@ -120,12 +98,12 @@ namespace DATN_WebDatPhongKhachSan.Controllers
             {
                 try
                 {
-                    _context.Update(room);
+                    _context.Update(owner);
                     await _context.SaveChangesAsync();
                 }
                 catch (DbUpdateConcurrencyException)
                 {
-                    if (!RoomExists(room.RoomID))
+                    if (!OwnerExists(owner.OwnerID))
                     {
                         return NotFound();
                     }
@@ -136,10 +114,10 @@ namespace DATN_WebDatPhongKhachSan.Controllers
                 }
                 return RedirectToAction(nameof(Index));
             }
-            return View(room);
+            return View(owner);
         }
 
-        // GET: Rooms/Delete/5
+        // GET: Owners/Delete/5
         public async Task<IActionResult> Delete(Guid? id)
         {
             if (id == null)
@@ -147,30 +125,30 @@ namespace DATN_WebDatPhongKhachSan.Controllers
                 return NotFound();
             }
 
-            var room = await _context.Rooms
-                .FirstOrDefaultAsync(m => m.RoomID == id);
-            if (room == null)
+            var owner = await _context.Owners
+                .FirstOrDefaultAsync(m => m.OwnerID == id);
+            if (owner == null)
             {
                 return NotFound();
             }
 
-            return View(room);
+            return View(owner);
         }
 
-        // POST: Rooms/Delete/5
+        // POST: Owners/Delete/5
         [HttpPost, ActionName("Delete")]
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> DeleteConfirmed(Guid id)
         {
-            var room = await _context.Rooms.FindAsync(id);
-            _context.Rooms.Remove(room);
+            var owner = await _context.Owners.FindAsync(id);
+            _context.Owners.Remove(owner);
             await _context.SaveChangesAsync();
             return RedirectToAction(nameof(Index));
         }
 
-        private bool RoomExists(Guid id)
+        private bool OwnerExists(Guid id)
         {
-            return _context.Rooms.Any(e => e.RoomID == id);
+            return _context.Owners.Any(e => e.OwnerID == id);
         }
     }
 }

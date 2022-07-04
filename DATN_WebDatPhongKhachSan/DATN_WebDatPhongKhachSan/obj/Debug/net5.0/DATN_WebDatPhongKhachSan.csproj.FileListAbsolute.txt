@@ -515,3 +515,14 @@ E:\DATN\DATN_NhomPhuc_Duy_WebsiteDatPhongKhachSan\DATN_WebDatPhongKhachSan\DATN_
 E:\DATN\DATN_NhomPhuc_Duy_WebsiteDatPhongKhachSan\DATN_WebDatPhongKhachSan\DATN_WebDatPhongKhachSan\obj\Debug\net5.0\Razor\Views\Users\Details.cshtml.g.cs
 E:\DATN\DATN_NhomPhuc_Duy_WebsiteDatPhongKhachSan\DATN_WebDatPhongKhachSan\DATN_WebDatPhongKhachSan\obj\Debug\net5.0\Razor\Views\Users\Edit.cshtml.g.cs
 E:\DATN\DATN_NhomPhuc_Duy_WebsiteDatPhongKhachSan\DATN_WebDatPhongKhachSan\DATN_WebDatPhongKhachSan\obj\Debug\net5.0\Razor\Views\Users\Index.cshtml.g.cs
+D:\DATN\DATN_NhomPhuc_Duy_WebsiteDatPhongKhachSan\DATN_WebDatPhongKhachSan\DATN_WebDatPhongKhachSan\obj\Debug\net5.0\Razor\Views\Rooms\Create.cshtml.g.cs
+D:\DATN\DATN_NhomPhuc_Duy_WebsiteDatPhongKhachSan\DATN_WebDatPhongKhachSan\DATN_WebDatPhongKhachSan\obj\Debug\net5.0\Razor\Views\Rooms\Delete.cshtml.g.cs
+D:\DATN\DATN_NhomPhuc_Duy_WebsiteDatPhongKhachSan\DATN_WebDatPhongKhachSan\DATN_WebDatPhongKhachSan\obj\Debug\net5.0\Razor\Views\Rooms\Details.cshtml.g.cs
+D:\DATN\DATN_NhomPhuc_Duy_WebsiteDatPhongKhachSan\DATN_WebDatPhongKhachSan\DATN_WebDatPhongKhachSan\obj\Debug\net5.0\Razor\Views\Rooms\Edit.cshtml.g.cs
+D:\DATN\DATN_NhomPhuc_Duy_WebsiteDatPhongKhachSan\DATN_WebDatPhongKhachSan\DATN_WebDatPhongKhachSan\obj\Debug\net5.0\Razor\Views\Rooms\HomeIndex.cshtml.g.cs
+D:\DATN\DATN_NhomPhuc_Duy_WebsiteDatPhongKhachSan\DATN_WebDatPhongKhachSan\DATN_WebDatPhongKhachSan\obj\Debug\net5.0\Razor\Views\Rooms\Index.cshtml.g.cs
+D:\DATN\DATN_NhomPhuc_Duy_WebsiteDatPhongKhachSan\DATN_WebDatPhongKhachSan\DATN_WebDatPhongKhachSan\obj\Debug\net5.0\Razor\Views\Owners\Create.cshtml.g.cs
+D:\DATN\DATN_NhomPhuc_Duy_WebsiteDatPhongKhachSan\DATN_WebDatPhongKhachSan\DATN_WebDatPhongKhachSan\obj\Debug\net5.0\Razor\Views\Owners\Delete.cshtml.g.cs
+D:\DATN\DATN_NhomPhuc_Duy_WebsiteDatPhongKhachSan\DATN_WebDatPhongKhachSan\DATN_WebDatPhongKhachSan\obj\Debug\net5.0\Razor\Views\Owners\Details.cshtml.g.cs
+D:\DATN\DATN_NhomPhuc_Duy_WebsiteDatPhongKhachSan\DATN_WebDatPhongKhachSan\DATN_WebDatPhongKhachSan\obj\Debug\net5.0\Razor\Views\Owners\Edit.cshtml.g.cs
+D:\DATN\DATN_NhomPhuc_Duy_WebsiteDatPhongKhachSan\DATN_WebDatPhongKhachSan\DATN_WebDatPhongKhachSan\obj\Debug\net5.0\Razor\Views\Owners\Index.cshtml.g.cs

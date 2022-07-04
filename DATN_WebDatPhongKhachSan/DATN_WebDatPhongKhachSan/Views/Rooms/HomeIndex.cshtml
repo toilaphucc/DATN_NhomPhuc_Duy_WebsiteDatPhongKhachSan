@@ -1,0 +1,28 @@
+﻿@model IEnumerable<DATN_WebDatPhongKhachSan.Models.Room>
+
+@{
+    ViewData["Title"] = "Trang chủ";
+    Layout = "~/Views/Shared/_LayoutIndex.cshtml";
+}
+
+<div class="row">
+    @foreach (var room in Model)
+    {
+        <div class="col-sm-3">
+            <div class="product-image-wrapper" width="300" height="300">
+                <div class="single-products">
+                    <div class="productinfo text-center">
+                        <img src="~/assets/images/@room.Image" width="200" height="200" alt="" style="border:2px" />
+                        <h3><a style="color: #ee5057" asp-action="HomeIndex" asp-route-id="@room.RoomID" asp-controller="Rooms">@room.Name</a></h3>
+                        <p>@room.Price</p>
+                        <p style="margin-left:5px">@room.Detail</p>
+                        <a asp- href="#" class="btn btn-default add-to-cart"><i class="fa fa-shopping-cart"></i>Đặt ngay</a>
+                    </div>
+                </div>
+                <div class="choose">
+
+                </div>
+            </div>
+        </div>
+    }
+</div>

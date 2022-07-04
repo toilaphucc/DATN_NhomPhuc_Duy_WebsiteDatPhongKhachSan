@@ -1,13 +1,11 @@
 ﻿@model DATN_WebDatPhongKhachSan.Models.Room
 
 @{
-    ViewData["Title"] = "Edit";
+    ViewData["Title"] = "Chỉnh sửa phòng " + @Html.DisplayNameFor(model => model.RoomCode);
     Layout = "~/Views/Shared/_LayoutIndex.cshtml";
 }
 
-<h1>Edit</h1>
-
-<h4>Room</h4>
+<h1>Chỉnh sửa</h1>
 <hr />
 <div class="row">
     <div class="col-md-4">
@@ -82,7 +80,7 @@
 </div>
 
 <div>
-    <a asp-action="Index">Back to List</a>
+    <a asp-action="Index">Quay lại</a>
 </div>
 
 @section Scripts {
