@@ -22,7 +22,8 @@ namespace DATN_WebDatPhongKhachSan.Controllers
         // GET: Owners
         public async Task<IActionResult> Index()
         {
-            return View(await _context.Owners.ToListAsync());
+            var datPhongKhachSanContext = _context.Owners.Include(o => o.User);
+            return View(await datPhongKhachSanContext.ToListAsync());
         }
 
         // GET: Owners/Details/5
@@ -34,6 +35,7 @@ namespace DATN_WebDatPhongKhachSan.Controllers
             }
 
             var owner = await _context.Owners
+                .Include(o => o.User)
                 .FirstOrDefaultAsync(m => m.OwnerID == id);
             if (owner == null)
             {
@@ -46,6 +48,7 @@ namespace DATN_WebDatPhongKhachSan.Controllers
         // GET: Owners/Create
         public IActionResult Create()
         {
+            ViewData["UserID"] = new SelectList(_context.Users, "UserID", "UserID");
             return View();
         }
 
@@ -63,6 +66,7 @@ namespace DATN_WebDatPhongKhachSan.Controllers
                 await _context.SaveChangesAsync();
                 return RedirectToAction(nameof(Index));
             }
+            ViewData["UserID"] = new SelectList(_context.Users, "UserID", "UserID", owner.UserID);
             return View(owner);
         }
 
@@ -79,6 +83,7 @@ namespace DATN_WebDatPhongKhachSan.Controllers
             {
                 return NotFound();
             }
+            ViewData["UserID"] = new SelectList(_context.Users, "UserID", "UserID", owner.UserID);
             return View(owner);
         }
 
@@ -114,6 +119,7 @@ namespace DATN_WebDatPhongKhachSan.Controllers
                 }
                 return RedirectToAction(nameof(Index));
             }
+            ViewData["UserID"] = new SelectList(_context.Users, "UserID", "UserID", owner.UserID);
             return View(owner);
         }
 
@@ -126,6 +132,7 @@ namespace DATN_WebDatPhongKhachSan.Controllers
             }
 
             var owner = await _context.Owners
+                .Include(o => o.User)
                 .FirstOrDefaultAsync(m => m.OwnerID == id);
             if (owner == null)
             {

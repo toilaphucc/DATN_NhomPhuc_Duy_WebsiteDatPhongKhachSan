@@ -1,0 +1,44 @@
+﻿@model DATN_WebDatPhongKhachSan.Models.Room;
+
+@{
+    ViewData["Title"] = "Chi Tiết Phòng "+ @Html.DisplayFor(model => model.Name);
+    Layout = "~/Views/Shared/_LayoutIndex.cshtml";
+}
+
+<div class="product-details">
+    <!--product-details-->
+    <div class="col-sm-5">
+        <div class="view-product">
+            <img src="~/assets/images/@Html.DisplayFor(model => model.Image)" alt="" />
+        </div>
+    </div>
+    <div class="col-sm-7">
+        <div class="product-information">
+            <!--/product-information-->
+            <img src="~/images/product-details/new.jpg" class="newarrival" alt="" />
+            <h1 style="font-weight:800;color:orange">@Html.DisplayFor(model => model.Name)</h1>
+            <p><b>Mã phòng:</b>@Html.DisplayFor(model => model.RoomCode)</p>
+            <img src="images/product-details/rating.png" alt="" />
+            <span>
+                <span>@Html.DisplayFor(model => model.Price) VNĐ</span>
+                <label>Số phòng trống :</label>
+                <input type="text" value="3" />
+                <button type="button" class="btn btn-fefault cart">
+                    <i class="fa fa-shopping-cart"></i>
+                    Thêm vào giỏ hàng
+                </button>
+            </span>
+            <p><b>Loại phòng:</b> @Html.DisplayFor(model => model.RoomType.RoomTypeName)</p>
+            <p>
+                <b>
+                    @if (Model.AmountRoom>0)
+                    {
+                        <h4 style="color:green">Còn phòng</h4>
+                    }
+                    else
+                    {<h4 style="color:red">Hết phòng</h4>}
+                </b>
+            </p>
+        </div><!--/product-information-->
+    </div>
+</div><!--/product-details-->

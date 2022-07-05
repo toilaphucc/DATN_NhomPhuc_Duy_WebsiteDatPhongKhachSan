@@ -13,12 +13,16 @@ namespace DATN_WebDatPhongKhachSan.Models
         public Guid InvoiceID { get; set; }
         [Display(Name = "Mã chủ phòng")]
         public Guid OwnerID { get; set; }
-        [Display(Name = "Mã khách thuê")]
+        public Owner Owner { get; set; }
+        [Display(Name = "Mã khách")]
         public Guid CustomerID { get; set; }
+        public Customer Customer { get; set; }
         [Display(Name = "Mã phòng thuê")]
         public Guid RoomID { get; set; }
+        public Room Room { get; set; }
         [Display(Name = "Mã hình thức thuê")]
         public Guid RentalTypeID { get; set; }
+        public RentalType RentalType { get; set; }
         [Display(Name = "Ngày nhận phòng")]
         public DateTime CheckInDate { get; set; }
         [Display(Name = "Ngày trả phòng")]
@@ -27,6 +31,7 @@ namespace DATN_WebDatPhongKhachSan.Models
         public int Count { get; set; }
         [Display(Name = "Mã tài khoản thanh toán")]
         public Guid PaymentAccountID { get; set; }
+        public PaymentAccount PaymentAccount { get; set; }
         [Display(Name = "Số lượng người thuê")]
         public int AmountPeople { get; set; }
         [Display(Name = "Ngày lập hóa đơn")]

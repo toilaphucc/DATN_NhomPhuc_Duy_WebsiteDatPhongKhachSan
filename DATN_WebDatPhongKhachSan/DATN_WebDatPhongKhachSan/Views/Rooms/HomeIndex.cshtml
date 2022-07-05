@@ -13,10 +13,13 @@
                 <div class="single-products">
                     <div class="productinfo text-center">
                         <img src="~/assets/images/@room.Image" width="200" height="200" alt="" style="border:2px" />
-                        <h3><a style="color: #ee5057" asp-action="HomeIndex" asp-route-id="@room.RoomID" asp-controller="Rooms">@room.Name</a></h3>
+                        <h3><a style="color: #ee5057" asp-action="HomeDetail" asp-route-id="@room.RoomID" asp-controller="Rooms">@room.Name</a></h3>
                         <p>@room.Price</p>
                         <p style="margin-left:5px">@room.Detail</p>
-                        <a asp- href="#" class="btn btn-default add-to-cart"><i class="fa fa-shopping-cart"></i>Đặt ngay</a>
+                        <p style="margin-left:5px">@room.RoomType.RoomTypeName</p>
+                        <p style="margin-left:5px"> @room.AmountRoom</p>
+                        <p style="margin-left:5px">@room.Owner.City</p>
+                        <a asp- href="#" class="btn btn-default add-to-cart"><i class="fa fa-shopping-cart"></i>Đặt phòng ngay</a>
                     </div>
                 </div>
                 <div class="choose">

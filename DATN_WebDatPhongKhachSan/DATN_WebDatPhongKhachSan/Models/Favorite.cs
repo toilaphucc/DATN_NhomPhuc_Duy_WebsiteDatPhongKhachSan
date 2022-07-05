@@ -14,10 +14,12 @@ namespace DATN_WebDatPhongKhachSan.Models
         [Display(Name = "Mã phòng")]
         public Guid RoomID { get; set; }
         [Display(Name = "Mã khách")]
-        public Guid UserID { get; set; }
+        public Guid CustomerID { get; set; }
+        public Customer Customer{ get; set; }
         [Display(Name = "Ngày thêm")]
         public DateTime CreatedOn { get; set; }
         [Display(Name = "Ngày chỉnh sửa")]
         public DateTime ModifiedOn { get; set; }
+
     }
 }

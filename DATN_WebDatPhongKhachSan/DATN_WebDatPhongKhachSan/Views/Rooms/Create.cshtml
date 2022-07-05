@@ -1,11 +1,13 @@
 ﻿@model DATN_WebDatPhongKhachSan.Models.Room
 
 @{
-    ViewData["Title"] = "Thêm phòng mới";
-    Layout = "~/Views/Shared/_LayoutIndex.cshtml";
+    ViewData["Title"] = "Create";
+    Layout = "~/Views/Shared/_layout_admin.cshtml";
 }
 
-<h1>Thêm phòng mới</h1>
+<h1>Create</h1>
+
+<h4>Room</h4>
 <hr />
 <div class="row">
     <div class="col-md-4">
@@ -13,8 +15,7 @@
             <div asp-validation-summary="ModelOnly" class="text-danger"></div>
             <div class="form-group">
                 <label asp-for="OwnerID" class="control-label"></label>
-                <input asp-for="OwnerID" class="form-control" />
-                <span asp-validation-for="OwnerID" class="text-danger"></span>
+                <select asp-for="OwnerID" class ="form-control" asp-items="ViewBag.OwnerID"></select>
             </div>
             <div class="form-group">
                 <label asp-for="RoomCode" class="control-label"></label>
@@ -48,8 +49,7 @@
             </div>
             <div class="form-group">
                 <label asp-for="RoomTypeID" class="control-label"></label>
-                <input asp-for="RoomTypeID" class="form-control" />
-                <span asp-validation-for="RoomTypeID" class="text-danger"></span>
+                <select asp-for="RoomTypeID" class ="form-control" asp-items="ViewBag.RoomTypeID"></select>
             </div>
             <div class="form-group">
                 <label asp-for="TagID" class="control-label"></label>
@@ -79,7 +79,7 @@
 </div>
 
 <div>
-    <a asp-action="Index">Quay lại</a>
+    <a asp-action="Index">Back to List</a>
 </div>
 
 @section Scripts {

@@ -25,7 +25,7 @@ namespace DATN_WebDatPhongKhachSan
         public void ConfigureServices(IServiceCollection services)
         {
             services.AddControllersWithViews();
-            services.AddDbContext<DatPhongKhachSanContext>(options =>options.UseSqlServer(Configuration.GetConnectionString("BookingHotel")));
+            services.AddDbContext<DatPhongKhachSanContext>(options =>options.UseSqlServer(Configuration.GetConnectionString("BookingMotel")));
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
@@ -52,7 +52,7 @@ namespace DATN_WebDatPhongKhachSan
             {
                 endpoints.MapControllerRoute(
                     name: "default",
-                    pattern: "{controller=Home}/{action=Index}/{id?}");
+                    pattern: "{controller=Users}/{action=Login}/{id?}");
             });
         }
     }

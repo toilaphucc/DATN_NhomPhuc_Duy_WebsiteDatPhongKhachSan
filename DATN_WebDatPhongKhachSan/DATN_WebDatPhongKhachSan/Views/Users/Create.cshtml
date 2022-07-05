@@ -1,13 +1,11 @@
 ﻿@model DATN_WebDatPhongKhachSan.Models.User
 
 @{
-    ViewData["Title"] = "Create";
+    ViewData["Title"] = "Tạo tài khoản";
     Layout = "~/Views/Shared/_layout_admin.cshtml";
 }
 
-<h1>Create</h1>
-
-<h4>User</h4>
+<h1>Tạo tài khoản</h1>
 <hr />
 <div class="row">
     <div class="col-md-4">
@@ -18,10 +16,15 @@
                 <input asp-for="UserName" class="form-control" />
                 <span asp-validation-for="UserName" class="text-danger"></span>
             </div>
-            <div class="form-group">
+            @*<div class="form-group">
                 <label asp-for="Password" class="control-label"></label>
                 <input asp-for="Password" class="form-control" />
                 <span asp-validation-for="Password" class="text-danger"></span>
+            </div>*@
+            <div class="wrap-input100 validate-input" data-validate="Password is required">
+                <label asp-for="Password" class="control-label"></label>
+                <input name="Password" asp-for="Password" type="password" class="form-control" />
+                <span class="focus-input100" data-symbol="&#xf190;"></span>
             </div>
             <div class="form-group">
                 <label asp-for="LastName" class="control-label"></label>
@@ -32,11 +35,6 @@
                 <label asp-for="FirstName" class="control-label"></label>
                 <input asp-for="FirstName" class="form-control" />
                 <span asp-validation-for="FirstName" class="text-danger"></span>
-            </div>
-            <div class="form-group">
-                <label asp-for="FullName" class="control-label"></label>
-                <input asp-for="FullName" class="form-control" />
-                <span asp-validation-for="FullName" class="text-danger"></span>
             </div>
             <div class="form-group">
                 <label asp-for="Email" class="control-label"></label>
@@ -50,34 +48,25 @@
             </div>
             <div class="form-group form-check">
                 <label class="form-check-label">
-                    <input class="form-check-input" asp-for="IsAdmin" /> @Html.DisplayNameFor(model => model.IsAdmin)
+                    <input class="form-check-input" asp-for="IsActive" /> Đang hoạt động
                 </label>
             </div>
             <div class="form-group form-check">
                 <label class="form-check-label">
-                    <input class="form-check-input" asp-for="IsActive" /> @Html.DisplayNameFor(model => model.IsActive)
+                    <input class="form-check-input" asp-for="IsAdmin" /> Tài khoản có phải quản trị viên hay không ?
                 </label>
             </div>
             <div class="form-group">
-                <label asp-for="CreatedOn" class="control-label"></label>
-                <input asp-for="CreatedOn" class="form-control" />
-                <span asp-validation-for="CreatedOn" class="text-danger"></span>
-            </div>
-            <div class="form-group">
-                <label asp-for="ModifiedOn" class="control-label"></label>
-                <input asp-for="ModifiedOn" class="form-control" />
-                <span asp-validation-for="ModifiedOn" class="text-danger"></span>
-            </div>
-            <div class="form-group">
-                <input type="submit" value="Create" class="btn btn-primary" />
+                <input type="submit" value="Tạo" class="btn btn-primary" />
             </div>
         </form>
     </div>
 </div>
 
-<div>
-    <a asp-action="Index">Back to List</a>
+<div class="form-group">
+    <a asp-action="Create">Huỷ</a>  ||  <a asp-action="Index">Quay lại</a>
 </div>
+<div> </div>
 
 @section Scripts {
     @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}

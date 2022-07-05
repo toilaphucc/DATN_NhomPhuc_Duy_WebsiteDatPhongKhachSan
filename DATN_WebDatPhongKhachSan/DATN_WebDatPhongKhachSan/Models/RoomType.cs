@@ -20,6 +20,6 @@ namespace DATN_WebDatPhongKhachSan.Models
         [Display(Name = "Ngày chỉnh sửa")]
         public DateTime ModifiedOn { get; set; }
 
-        //public List<Room> Rooms { get; set; }
+        public List<Room> Rooms { get; set; }
     }
 }

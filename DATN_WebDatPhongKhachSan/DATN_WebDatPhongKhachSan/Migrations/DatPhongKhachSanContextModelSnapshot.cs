@@ -48,6 +48,8 @@ namespace DATN_WebDatPhongKhachSan.Migrations
 
                     b.HasKey("CustomerID");
 
+                    b.HasIndex("UserID");
+
                     b.ToTable("Custommers");
                 });
 
@@ -60,16 +62,23 @@ namespace DATN_WebDatPhongKhachSan.Migrations
                     b.Property<DateTime>("CreatedOn")
                         .HasColumnType("datetime2");
 
+                    b.Property<Guid>("CustomerID")
+                        .HasColumnType("uniqueidentifier");
+
                     b.Property<DateTime>("ModifiedOn")
                         .HasColumnType("datetime2");
+
+                    b.Property<Guid?>("OwnerID")
+                        .HasColumnType("uniqueidentifier");
 
                     b.Property<Guid>("RoomID")
                         .HasColumnType("uniqueidentifier");
 
-                    b.Property<Guid>("UserID")
-                        .HasColumnType("uniqueidentifier");
-
                     b.HasKey("FavoriteID");
+
+                    b.HasIndex("CustomerID");
+
+                    b.HasIndex("OwnerID");
 
                     b.ToTable("Favorites");
                 });
@@ -115,6 +124,16 @@ namespace DATN_WebDatPhongKhachSan.Migrations
 
                     b.HasKey("InvoiceID");
 
+                    b.HasIndex("CustomerID");
+
+                    b.HasIndex("OwnerID");
+
+                    b.HasIndex("PaymentAccountID");
+
+                    b.HasIndex("RentalTypeID");
+
+                    b.HasIndex("RoomID");
+
                     b.ToTable("Invoices");
                 });
 
@@ -153,6 +172,8 @@ namespace DATN_WebDatPhongKhachSan.Migrations
 
                     b.HasKey("OwnerID");
 
+                    b.HasIndex("UserID");
+
                     b.ToTable("Owners");
                 });
 
@@ -174,6 +195,9 @@ namespace DATN_WebDatPhongKhachSan.Migrations
                     b.Property<DateTime>("CreatedOn")
                         .HasColumnType("datetime2");
 
+                    b.Property<Guid?>("CustomerID")
+                        .HasColumnType("uniqueidentifier");
+
                     b.Property<Guid>("CustommerID")
                         .HasColumnType("uniqueidentifier");
 
@@ -184,6 +208,8 @@ namespace DATN_WebDatPhongKhachSan.Migrations
                         .HasColumnType("datetime2");
 
                     b.HasKey("PaymentAccountID");
+
+                    b.HasIndex("CustomerID");
 
                     b.ToTable("PaymentAccounts");
                 });
@@ -254,6 +280,10 @@ namespace DATN_WebDatPhongKhachSan.Migrations
                         .HasColumnType("uniqueidentifier");
 
                     b.HasKey("RoomID");
+
+                    b.HasIndex("OwnerID");
+
+                    b.HasIndex("RoomTypeID");
 
                     b.ToTable("Rooms");
                 });
@@ -349,6 +379,157 @@ namespace DATN_WebDatPhongKhachSan.Migrations
                     b.HasKey("UserID");
 
                     b.ToTable("Users");
+                });
+
+            modelBuilder.Entity("DATN_WebDatPhongKhachSan.Models.Customer", b =>
+                {
+                    b.HasOne("DATN_WebDatPhongKhachSan.Models.User", "User")
+                        .WithMany("Customers")
+                        .HasForeignKey("UserID")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.Navigation("User");
+                });
+
+            modelBuilder.Entity("DATN_WebDatPhongKhachSan.Models.Favorite", b =>
+                {
+                    b.HasOne("DATN_WebDatPhongKhachSan.Models.Customer", "Customer")
+                        .WithMany()
+                        .HasForeignKey("CustomerID")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.HasOne("DATN_WebDatPhongKhachSan.Models.Owner", null)
+                        .WithMany("Favorites")
+                        .HasForeignKey("OwnerID");
+
+                    b.Navigation("Customer");
+                });
+
+            modelBuilder.Entity("DATN_WebDatPhongKhachSan.Models.Invoice", b =>
+                {
+                    b.HasOne("DATN_WebDatPhongKhachSan.Models.Customer", "Customer")
+                        .WithMany("Invoices")
+                        .HasForeignKey("CustomerID")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.HasOne("DATN_WebDatPhongKhachSan.Models.Owner", "Owner")
+                        .WithMany("Invoices")
+                        .HasForeignKey("OwnerID")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.HasOne("DATN_WebDatPhongKhachSan.Models.PaymentAccount", "PaymentAccount")
+                        .WithMany("Invoices")
+                        .HasForeignKey("PaymentAccountID")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.HasOne("DATN_WebDatPhongKhachSan.Models.RentalType", "RentalType")
+                        .WithMany("Invoices")
+                        .HasForeignKey("RentalTypeID")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.HasOne("DATN_WebDatPhongKhachSan.Models.Room", "Room")
+                        .WithMany("Invoices")
+                        .HasForeignKey("RoomID")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.Navigation("Customer");
+
+                    b.Navigation("Owner");
+
+                    b.Navigation("PaymentAccount");
+
+                    b.Navigation("RentalType");
+
+                    b.Navigation("Room");
+                });
+
+            modelBuilder.Entity("DATN_WebDatPhongKhachSan.Models.Owner", b =>
+                {
+                    b.HasOne("DATN_WebDatPhongKhachSan.Models.User", "User")
+                        .WithMany("Owners")
+                        .HasForeignKey("UserID")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.Navigation("User");
+                });
+
+            modelBuilder.Entity("DATN_WebDatPhongKhachSan.Models.PaymentAccount", b =>
+                {
+                    b.HasOne("DATN_WebDatPhongKhachSan.Models.Customer", "Customer")
+                        .WithMany("PaymentAccounts")
+                        .HasForeignKey("CustomerID");
+
+                    b.Navigation("Customer");
+                });
+
+            modelBuilder.Entity("DATN_WebDatPhongKhachSan.Models.Room", b =>
+                {
+                    b.HasOne("DATN_WebDatPhongKhachSan.Models.Owner", "Owner")
+                        .WithMany("Rooms")
+                        .HasForeignKey("OwnerID")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.HasOne("DATN_WebDatPhongKhachSan.Models.RoomType", "RoomType")
+                        .WithMany("Rooms")
+                        .HasForeignKey("RoomTypeID")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.Navigation("Owner");
+
+                    b.Navigation("RoomType");
+                });
+
+            modelBuilder.Entity("DATN_WebDatPhongKhachSan.Models.Customer", b =>
+                {
+                    b.Navigation("Invoices");
+
+                    b.Navigation("PaymentAccounts");
+                });
+
+            modelBuilder.Entity("DATN_WebDatPhongKhachSan.Models.Owner", b =>
+                {
+                    b.Navigation("Favorites");
+
+                    b.Navigation("Invoices");
+
+                    b.Navigation("Rooms");
+                });
+
+            modelBuilder.Entity("DATN_WebDatPhongKhachSan.Models.PaymentAccount", b =>
+                {
+                    b.Navigation("Invoices");
+                });
+
+            modelBuilder.Entity("DATN_WebDatPhongKhachSan.Models.RentalType", b =>
+                {
+                    b.Navigation("Invoices");
+                });
+
+            modelBuilder.Entity("DATN_WebDatPhongKhachSan.Models.Room", b =>
+                {
+                    b.Navigation("Invoices");
+                });
+
+            modelBuilder.Entity("DATN_WebDatPhongKhachSan.Models.RoomType", b =>
+                {
+                    b.Navigation("Rooms");
+                });
+
+            modelBuilder.Entity("DATN_WebDatPhongKhachSan.Models.User", b =>
+                {
+                    b.Navigation("Customers");
+
+                    b.Navigation("Owners");
                 });
 #pragma warning restore 612, 618
         }

@@ -20,31 +20,32 @@ namespace DATN_WebDatPhongKhachSan.Controllers
         }
 
         // GET: Rooms
-        public IActionResult HomeIndex()
+        public async Task<IActionResult> HomeIndex()
         {
-            var viewroom = _context.Rooms;
-            var lstroom = from room in _context.Rooms
-                          join roomtype in _context.RoomTypes on
-                            room.RoomTypeID equals roomtype.RoomTypeID
-                          join owner in _context.Owners on
-                          room.OwnerID equals owner.OwnerID
-                          select new
-                          {
-                              Name = room.Name,
-                              Detail = room.Detail,
-                              Price = room.Price,
-                              Image = room.Image,
-                              Address = owner.Address,
-                              Amount = room.AmountRoom,
-                              RoomType = roomtype.RoomTypeName
-                          };
-            //var viewroom = _context.Rooms.OrderByDescending(p => p.RoomID).Take(6).ToList();
-
-            return View(viewroom);
+            var datPhongKhachSanContext = _context.Rooms.Include(r => r.Owner).Include(r => r.RoomType);
+            return View(await datPhongKhachSanContext.ToListAsync());
         }
         public async Task<IActionResult> Index()
         {
-            return View(await _context.Rooms.ToListAsync());
+            var datPhongKhachSanContext = _context.Rooms.Include(r => r.Owner).Include(r => r.RoomType);
+            return View(await datPhongKhachSanContext.ToListAsync());
+        }
+        public async Task<IActionResult> HomeDetail(Guid ? RoomID)
+        {
+            if (RoomID == null)
+            {
+                return NotFound();
+            }
+            var room = await _context.Rooms
+                .Include(r => r.RoomType)
+                .Include(r => r.Owner)
+                .FirstOrDefaultAsync(m => m.RoomID == RoomID);
+            if (room == null)
+            {
+                return NotFound();
+            }
+
+            return View(room);
         }
 
         // GET: Rooms/Details/5
@@ -56,6 +57,8 @@ namespace DATN_WebDatPhongKhachSan.Controllers
             }
 
             var room = await _context.Rooms
+                .Include(r => r.Owner)
+                .Include(r => r.RoomType)
                 .FirstOrDefaultAsync(m => m.RoomID == id);
             if (room == null)
             {
@@ -68,6 +71,8 @@ namespace DATN_WebDatPhongKhachSan.Controllers
         // GET: Rooms/Create
         public IActionResult Create()
         {
+            ViewData["OwnerID"] = new SelectList(_context.Owners, "OwnerID", "OwnerID");
+            ViewData["RoomTypeID"] = new SelectList(_context.RoomTypes, "RoomTypeID", "RoomTypeID");
             return View();
         }
 
@@ -85,6 +90,8 @@ namespace DATN_WebDatPhongKhachSan.Controllers
                 await _context.SaveChangesAsync();
                 return RedirectToAction(nameof(Index));
             }
+            ViewData["OwnerID"] = new SelectList(_context.Owners, "OwnerID", "OwnerID", room.OwnerID);
+            ViewData["RoomTypeID"] = new SelectList(_context.RoomTypes, "RoomTypeID", "RoomTypeID", room.RoomTypeID);
             return View(room);
         }
 
@@ -101,6 +108,8 @@ namespace DATN_WebDatPhongKhachSan.Controllers
             {
                 return NotFound();
             }
+            ViewData["OwnerID"] = new SelectList(_context.Owners, "OwnerID", "OwnerID", room.OwnerID);
+            ViewData["RoomTypeID"] = new SelectList(_context.RoomTypes, "RoomTypeID", "RoomTypeID", room.RoomTypeID);
             return View(room);
         }
 
@@ -136,6 +145,8 @@ namespace DATN_WebDatPhongKhachSan.Controllers
                 }
                 return RedirectToAction(nameof(Index));
             }
+            ViewData["OwnerID"] = new SelectList(_context.Owners, "OwnerID", "OwnerID", room.OwnerID);
+            ViewData["RoomTypeID"] = new SelectList(_context.RoomTypes, "RoomTypeID", "RoomTypeID", room.RoomTypeID);
             return View(room);
         }
 
@@ -148,6 +159,8 @@ namespace DATN_WebDatPhongKhachSan.Controllers
             }
 
             var room = await _context.Rooms
+                .Include(r => r.Owner)
+                .Include(r => r.RoomType)
                 .FirstOrDefaultAsync(m => m.RoomID == id);
             if (room == null)
             {

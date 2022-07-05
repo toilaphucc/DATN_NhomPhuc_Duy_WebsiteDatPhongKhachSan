@@ -13,6 +13,7 @@ namespace DATN_WebDatPhongKhachSan.Models
         public Guid PaymentAccountID { get; set; }
         [Display(Name = "Mã khách hàng")]
         public Guid CustommerID { get; set; }
+        public Customer Customer { get; set; }
         [Display(Name = "Số tài khoản")]
         public string AccountNumber { get; set; }
         [Display(Name = "Mã ngân hàng")]
@@ -25,5 +26,7 @@ namespace DATN_WebDatPhongKhachSan.Models
         public DateTime CreatedOn { get; set; }
         [Display(Name = "Ngày chỉnh sửa")]
         public DateTime ModifiedOn { get; set; }
+
+        public List<Invoice> Invoices { get; set; }
     }
 }

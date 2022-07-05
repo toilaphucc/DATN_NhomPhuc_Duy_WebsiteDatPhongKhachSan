@@ -13,6 +13,7 @@ namespace DATN_WebDatPhongKhachSan.Models
         public Guid OwnerID { get; set; }
         [Display(Name = "Mã tài khoản")]
         public Guid UserID { get; set; }
+        public User User { get; set; }
         [Display(Name = "Số nhà, đường")]
         public string Address { get; set; }
         [Display(Name = "Xã/Phường")]
@@ -29,5 +30,9 @@ namespace DATN_WebDatPhongKhachSan.Models
         public DateTime CreatedOn { get; set; }
         [Display(Name = "Ngày chỉnh sửa")]
         public DateTime ModifiedOn { get; set; }
+
+        public List<Invoice> Invoices { get; set; }
+        public List<Favorite> Favorites { get; set; }
+        public List<Room> Rooms { get; set; }
     }
 }

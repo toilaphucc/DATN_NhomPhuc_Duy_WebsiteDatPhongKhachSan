@@ -13,6 +13,7 @@ namespace DATN_WebDatPhongKhachSan.Models
         public Guid CustomerID { get; set; }
         [Display(Name = "Mã tài khoản")]
         public Guid UserID { get; set; }
+        public User User { get; set; }
         [Display(Name = "Ngày sinh")]
         public string Date { get; set; }
         [Display(Name = "Tháng sinh")]
@@ -26,6 +27,8 @@ namespace DATN_WebDatPhongKhachSan.Models
         [Display(Name = "Ngày chỉnh sửa")]
         public DateTime ModifiedOn { get; set; }
 
-        
+        public List<Invoice> Invoices { get; set; }
+        public List<PaymentAccount> PaymentAccounts { get; set; }
+
     }
 }

@@ -7,6 +7,7 @@ using Microsoft.AspNetCore.Mvc.Rendering;
 using Microsoft.EntityFrameworkCore;
 using DATN_WebDatPhongKhachSan.Data;
 using DATN_WebDatPhongKhachSan.Models;
+using Microsoft.AspNetCore.Http;
 
 namespace DATN_WebDatPhongKhachSan.Controllers
 {
@@ -19,10 +20,33 @@ namespace DATN_WebDatPhongKhachSan.Controllers
             _context = context;
         }
 
+        public IActionResult Login(string username, string password)
+        {
+            ViewBag.isLogin = true;
+            User user = _context.Users.Where(i => i.UserName == username && i.Password == password).FirstOrDefault();
+            if (user != null)
+            {
+                //HttpContext.Session.SetString("UserID", user.UserID.ToString());
+                //HttpContext.Session.SetString("UserPhone", user.Phone);
+                ViewBag.success_Login_Message = "Đăng nhập thành công";
+                if (user.IsAdmin == true)
+                {
+                    return RedirectToAction("Index", "Users");
+                }
+                else
+                    return RedirectToAction("HomeIndex", "Rooms");
+            }
+            else
+            {
+                ViewBag.failed_Login_Message = "Đăng nhập thất bại";
+                return View();
+            }
+        }
+
         // GET: Users
         public async Task<IActionResult> Index()
         {
-            return View(await _context.Users.ToListAsync());
+            return View( _context.Users.OrderByDescending(r => r.ModifiedOn).ToList());
         }
 
         // GET: Users/Details/5
@@ -59,6 +83,9 @@ namespace DATN_WebDatPhongKhachSan.Controllers
             if (ModelState.IsValid)
             {
                 user.UserID = Guid.NewGuid();
+                user.FullName = user.LastName.ToString().Trim() + " "+user.FirstName.ToString().Trim();
+                user.CreatedOn = DateTime.Now;
+                user.ModifiedOn = DateTime.Now;
                 _context.Add(user);
                 await _context.SaveChangesAsync();
                 return RedirectToAction(nameof(Index));
@@ -98,6 +125,8 @@ namespace DATN_WebDatPhongKhachSan.Controllers
             {
                 try
                 {
+                    user.FullName = user.LastName.ToString().Trim() + " " + user.FirstName.ToString().Trim();
+                    user.ModifiedOn = DateTime.Now;
                     _context.Update(user);
                     await _context.SaveChangesAsync();
                 }
@@ -141,7 +170,17 @@ namespace DATN_WebDatPhongKhachSan.Controllers
         public async Task<IActionResult> DeleteConfirmed(Guid id)
         {
             var user = await _context.Users.FindAsync(id);
+            var owner = await _context.Owners.FirstOrDefaultAsync(o => o.UserID == id);
+            var customer = await _context.Custommers.FirstOrDefaultAsync(c => c.UserID == id);
             _context.Users.Remove(user);
+            if(owner != null)
+            {
+                _context.Owners.Remove(owner);
+            }      
+            if(customer != null)
+            {
+                _context.Custommers.Remove(customer);
+            }
             await _context.SaveChangesAsync();
             return RedirectToAction(nameof(Index));
         }

@@ -1,128 +1,102 @@
 ﻿@model IEnumerable<DATN_WebDatPhongKhachSan.Models.Room>
 
 @{
-    ViewData["Title"] = "Danh mục phòng";
-    Layout = "~/Views/Shared/_LayoutIndex.cshtml";
+    ViewData["Title"] = "Index";
+    Layout = "~/Views/Shared/_layout_admin.cshtml";
 }
 
-<h1>Danh mục các phòng</h1>
+<h1>Index</h1>
 
-    <p>
-        <a asp-action="Create">Thêm mới phòng</a>
-    </p>
-    <table class="table">
-        <thead>
-            <tr>
-                <th>
-                    @Html.DisplayNameFor(model => model.OwnerID)
-                </th>
-                <th>
-                    @Html.DisplayNameFor(model => model.RoomCode)
-                </th>
-                <th>
-                    @Html.DisplayNameFor(model => model.Price)
-                </th>
-                <th>
-                    @Html.DisplayNameFor(model => model.Detail)
-                </th>
-                <th>
-                    @Html.DisplayNameFor(model => model.Image)
-                </th>
-                <th>
-                    @Html.DisplayNameFor(model => model.AmountRoom)
-                </th>
-                <th>
-                    @Html.DisplayNameFor(model => model.IsActive)
-                </th>
-                <th>
-                    @Html.DisplayNameFor(model => model.RoomTypeID)
-                </th>
-                <th>
-                    @Html.DisplayNameFor(model => model.TagID)
-                </th>
-                <th>
-                    @Html.DisplayNameFor(model => model.Name)
-                </th>
-                <th>
-                    @Html.DisplayNameFor(model => model.CreatedOn)
-                </th>
-                <th>
-                    @Html.DisplayNameFor(model => model.ModifiedOn)
-                </th>
-                <th></th>
-            </tr>
-        </thead>
-        <tbody>
-    @foreach (var item in Model) {
-            <tr>
-                <td>
-                    @Html.DisplayFor(modelItem => item.OwnerID)
-                </td>
-                <td>
-                    @Html.DisplayFor(modelItem => item.RoomCode)
-                </td>
-                <td>
-                    @Html.DisplayFor(modelItem => item.Price)
-                </td>
-                <td>
-                    @Html.DisplayFor(modelItem => item.Detail)
-                </td>
-                <td>
-                    @Html.DisplayFor(modelItem => item.Image)
-                </td>
-                <td>
-                    @Html.DisplayFor(modelItem => item.AmountRoom)
-                </td>
-                <td>
-                    @Html.DisplayFor(modelItem => item.IsActive)
-                </td>
-                <td>
-                    @Html.DisplayFor(modelItem => item.RoomTypeID)
-                </td>
-                <td>
-                    @Html.DisplayFor(modelItem => item.TagID)
-                </td>
-                <td>
-                    @Html.DisplayFor(modelItem => item.Name)
-                </td>
-                <td>
-                    @Html.DisplayFor(modelItem => item.CreatedOn)
-                </td>
-                <td>
-                    @Html.DisplayFor(modelItem => item.ModifiedOn)
-                </td>
-                <td>
-                    <a asp-action="Edit" asp-route-id="@item.RoomID">Chỉnh sửa</a> |
-                    <a asp-action="Details" asp-route-id="@item.RoomID">Xem chi tiết</a> |
-                    <a asp-action="Delete" asp-route-id="@item.RoomID">Xóa</a>
-                </td>
-            </tr>
-    }
-        </tbody>
-    </table>
-
-    @*Đặt danh sách các phòng vô đây*@
-
-    @*@foreach (var room in Model)
-        {
-            <div class="col-sm-4">
-                <div class="product-image-wrapper">
-                    <div class="single-products">
-                        <div class="productinfo text-center">
-                            <img src="~/assets/images/@room.Image" width="300" height="300" alt="" />
-                            <h2><a style="color:orange" asp-action="DanhSachPhongHome" asp-route-id="@room.RoomID" asp-controller="Rooms">@room.Name</a></h2>
-                            <p>@room.Price</p>
-                            <a asp- href="#" class="btn btn-default add-to-cart"><i class="fa fa-shopping-cart"></i>Thêm vào giỏ</a>
-                        </div>
-                    </div>
-                    <div class="choose">
-
-                    </div>
-                </div>
-            </div>
-        }*@
-
-
-
-
-
+<p>
+    <a asp-action="Create">Create New</a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.Owner)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.RoomCode)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Price)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Detail)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Image)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.AmountRoom)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.IsActive)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.RoomType)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.TagID)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Name)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.CreatedOn)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.ModifiedOn)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.Owner.OwnerID)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.RoomCode)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Price)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Detail)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Image)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.AmountRoom)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.IsActive)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.RoomType.RoomTypeID)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.TagID)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Name)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.CreatedOn)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.ModifiedOn)
+            </td>
+            <td>
+                <a asp-action="Edit" asp-route-id="@item.RoomID">Edit</a> |
+                <a asp-action="Details" asp-route-id="@item.RoomID">Details</a> |
+                <a asp-action="Delete" asp-route-id="@item.RoomID">Delete</a>
+            </td>
+        </tr>
+}
+    </tbody>
+</table>
