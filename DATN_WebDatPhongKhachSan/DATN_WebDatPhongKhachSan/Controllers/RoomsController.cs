@@ -32,14 +32,16 @@ namespace DATN_WebDatPhongKhachSan.Controllers
         }
         public async Task<IActionResult> HomeDetail(Guid ? RoomID)
         {
-            if (RoomID == null)
+            var ID = RouteData.Values["id"];
+            
+            if (ID == null)
             {
                 return NotFound();
             }
             var room = await _context.Rooms
                 .Include(r => r.RoomType)
                 .Include(r => r.Owner)
-                .FirstOrDefaultAsync(m => m.RoomID == RoomID);
+                .FirstOrDefaultAsync(m => m.RoomID.ToString() == ID);
             if (room == null)
             {
                 return NotFound();
