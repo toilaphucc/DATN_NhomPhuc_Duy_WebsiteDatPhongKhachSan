@@ -26,6 +26,10 @@ namespace DATN_WebDatPhongKhachSan.Controllers
         {
             return View();
         }
+        public IActionResult login_user()
+        {
+            return View();
+        }
         public IActionResult DanhSachPhongHome()
         {
             //var viewroom = _context.Rooms;
