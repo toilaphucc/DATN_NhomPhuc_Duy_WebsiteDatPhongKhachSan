@@ -48,7 +48,7 @@ namespace DATN_WebDatPhongKhachSan.Controllers
         // GET: Owners/Create
         public IActionResult Create()
         {
-            ViewData["UserID"] = new SelectList(_context.Users, "UserID", "UserID");
+            ViewData["UserID"] = new SelectList(_context.Users, "UserID", "UserName");
             return View();
         }
 
@@ -62,6 +62,8 @@ namespace DATN_WebDatPhongKhachSan.Controllers
             if (ModelState.IsValid)
             {
                 owner.OwnerID = Guid.NewGuid();
+                owner.CreatedOn = DateTime.Now;
+                owner.ModifiedOn = DateTime.Now;
                 _context.Add(owner);
                 await _context.SaveChangesAsync();
                 return RedirectToAction(nameof(Index));
@@ -83,7 +85,7 @@ namespace DATN_WebDatPhongKhachSan.Controllers
             {
                 return NotFound();
             }
-            ViewData["UserID"] = new SelectList(_context.Users, "UserID", "UserID", owner.UserID);
+            ViewData["UserID"] = new SelectList(_context.Users, "UserID", "UserName", owner.UserID);
             return View(owner);
         }
 
@@ -92,7 +94,7 @@ namespace DATN_WebDatPhongKhachSan.Controllers
         // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Edit(Guid id, [Bind("OwnerID,UserID,Address,Ward,District,City,IsHotel,HotelName,CreatedOn,ModifiedOn")] Owner owner)
+        public async Task<IActionResult> Edit(Guid id, [Bind("OwnerID,Address,Ward,District,City,IsHotel,HotelName,CreatedOn,ModifiedOn")] Owner owner)
         {
             if (id != owner.OwnerID)
             {
@@ -103,6 +105,7 @@ namespace DATN_WebDatPhongKhachSan.Controllers
             {
                 try
                 {
+                    owner.ModifiedOn = DateTime.Now;
                     _context.Update(owner);
                     await _context.SaveChangesAsync();
                 }
@@ -148,6 +151,8 @@ namespace DATN_WebDatPhongKhachSan.Controllers
         public async Task<IActionResult> DeleteConfirmed(Guid id)
         {
             var owner = await _context.Owners.FindAsync(id);
+            var room = await _context.Rooms.FirstOrDefaultAsync(r => r.RoomID == id);
+            _context.Rooms.Remove(room);
             _context.Owners.Remove(owner);
             await _context.SaveChangesAsync();
             return RedirectToAction(nameof(Index));

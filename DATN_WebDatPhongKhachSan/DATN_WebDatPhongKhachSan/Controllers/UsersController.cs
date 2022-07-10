@@ -8,37 +8,71 @@ using Microsoft.EntityFrameworkCore;
 using DATN_WebDatPhongKhachSan.Data;
 using DATN_WebDatPhongKhachSan.Models;
 using Microsoft.AspNetCore.Http;
+using Microsoft.AspNetCore.Hosting;
 
 namespace DATN_WebDatPhongKhachSan.Controllers
 {
     public class UsersController : Controller
     {
         private readonly DatPhongKhachSanContext _context;
+        private readonly IWebHostEnvironment _webHostEnvironment;
 
-        public UsersController(DatPhongKhachSanContext context)
+        public UsersController(DatPhongKhachSanContext context, IWebHostEnvironment webHostEnvironment)
         {
             _context = context;
+            _webHostEnvironment = webHostEnvironment;
         }
-
-        public IActionResult Login(string username, string password)
+        public IActionResult LoginAdmin(string username, string password)
         {
             ViewBag.isLogin = true;
-            User user = _context.Users.Where(i => i.UserName == username && i.Password == password).FirstOrDefault();
-            if (user != null)
+            User userAd = _context.Users.Where(u => u.UserName == username && u.IsAdmin == true).FirstOrDefault();
+            if(userAd !=null)
             {
-                //HttpContext.Session.SetString("UserID", user.UserID.ToString());
-                //HttpContext.Session.SetString("UserPhone", user.Phone);
-                ViewBag.success_Login_Message = "Đăng nhập thành công";
-                if (user.IsAdmin == true)
+                User user = _context.Users.Where(i => i.UserName == username && i.Password == password && i.IsAdmin == true).FirstOrDefault();
+                if (user != null)
                 {
+                   //HttpContext.Session.SetString("UserID", user.UserID.ToString());
+                    //HttpContext.Session.SetString("UserPhone", user.Phone);
+                    //ViewBag.success_Login_Message = "Đăng nhập thành công";
                     return RedirectToAction("Index", "Users");
+
                 }
                 else
-                    return RedirectToAction("HomeIndex", "Rooms");
+                {
+                    //ViewBag.failed_Login_Message = "Mật khẩu không chính xác";
+                    return View();
+                }
             }
             else
             {
-                ViewBag.failed_Login_Message = "Đăng nhập thất bại";
+                //ViewBag.failed_Login_Message = "Tài khoản không chính xác";
+                return View();
+            }
+            
+        }
+        public IActionResult Login(string username, string password)
+        {
+            ViewBag.isLogin = true;
+            User userAd = _context.Users.Where(u => u.UserName == username && u.IsAdmin == false).FirstOrDefault();
+            if (userAd != null)
+            {
+                User user = _context.Users.Where(i => i.UserName == username && i.Password == password && i.IsAdmin == false).FirstOrDefault();
+                if (user != null)
+                {
+                    //HttpContext.Session.SetString("UserID", user.UserID.ToString());
+                    //HttpContext.Session.SetString("UserPhone", user.Phone);
+                    ViewBag.success_Login_Message = "Đăng nhập thành công";
+                    return RedirectToAction("HomeIndex", "Rooms");
+                }
+                else
+                {
+                    ViewBag.failed_Login_Message = "Mật khẩu không chính xác";
+                    return View();
+                }
+            }
+            else
+            {
+                ViewBag.failed_Login_Message = "Tài khoản không chính xác";
                 return View();
             }
         }
@@ -84,6 +118,7 @@ namespace DATN_WebDatPhongKhachSan.Controllers
             {
                 user.UserID = Guid.NewGuid();
                 user.FullName = user.LastName.ToString().Trim() + " "+user.FirstName.ToString().Trim();
+                user.IsActive = true;
                 user.CreatedOn = DateTime.Now;
                 user.ModifiedOn = DateTime.Now;
                 _context.Add(user);

@@ -59,6 +59,8 @@ namespace DATN_WebDatPhongKhachSan.Controllers
             if (ModelState.IsValid)
             {
                 roomType.RoomTypeID = Guid.NewGuid();
+                roomType.CreatedOn = DateTime.Now;
+                roomType.ModifiedOn = DateTime.Now;
                 _context.Add(roomType);
                 await _context.SaveChangesAsync();
                 return RedirectToAction(nameof(Index));
@@ -98,6 +100,7 @@ namespace DATN_WebDatPhongKhachSan.Controllers
             {
                 try
                 {
+                    roomType.ModifiedOn = DateTime.Now;
                     _context.Update(roomType);
                     await _context.SaveChangesAsync();
                 }

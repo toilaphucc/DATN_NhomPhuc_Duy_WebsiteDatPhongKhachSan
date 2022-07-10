@@ -48,7 +48,7 @@ namespace DATN_WebDatPhongKhachSan.Controllers
         // GET: Customers/Create
         public IActionResult Create()
         {
-            ViewData["UserID"] = new SelectList(_context.Users, "UserID", "UserID");
+            ViewData["UserID"] = new SelectList(_context.Users, "UserID", "UserName");
             return View();
         }
 
@@ -62,6 +62,11 @@ namespace DATN_WebDatPhongKhachSan.Controllers
             if (ModelState.IsValid)
             {
                 customer.CustomerID = Guid.NewGuid();
+                customer.Date = customer.DoB.ToString().Substring(0, 2);
+                customer.Month = customer.DoB.ToString().Substring(3, 2);
+                customer.Year = customer.DoB.ToString().Substring(4, 4);
+                customer.CreatedOn = DateTime.Now;
+                customer.ModifiedOn = DateTime.Now;
                 _context.Add(customer);
                 await _context.SaveChangesAsync();
                 return RedirectToAction(nameof(Index));
@@ -83,7 +88,7 @@ namespace DATN_WebDatPhongKhachSan.Controllers
             {
                 return NotFound();
             }
-            ViewData["UserID"] = new SelectList(_context.Users, "UserID", "UserID", customer.UserID);
+            ViewData["UserID"] = new SelectList(_context.Users, "UserID", "UserName", customer.UserID);
             return View(customer);
         }
 
@@ -103,6 +108,10 @@ namespace DATN_WebDatPhongKhachSan.Controllers
             {
                 try
                 {
+                    customer.Date = customer.DoB.ToString().Substring(0, 2);
+                    customer.Month = customer.DoB.ToString().Substring(3, 2);
+                    customer.Year = customer.DoB.ToString().Substring(4, 4);
+                    customer.ModifiedOn = DateTime.Now;
                     _context.Update(customer);
                     await _context.SaveChangesAsync();
                 }

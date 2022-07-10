@@ -1,13 +1,11 @@
 ﻿@model DATN_WebDatPhongKhachSan.Models.RoomType
 
 @{
-    ViewData["Title"] = "Create";
+    ViewData["Title"] = "Thêm loại phòng";
     Layout = "~/Views/Shared/_layout_admin.cshtml";
 }
 
-<h1>Create</h1>
-
-<h4>RoomType</h4>
+<h1>Thêm loại phòng mới</h1>
 <hr />
 <div class="row">
     <div class="col-md-4">
@@ -23,7 +21,7 @@
                 <input asp-for="Detail" class="form-control" />
                 <span asp-validation-for="Detail" class="text-danger"></span>
             </div>
-            <div class="form-group">
+            @*<div class="form-group">
                 <label asp-for="CreatedOn" class="control-label"></label>
                 <input asp-for="CreatedOn" class="form-control" />
                 <span asp-validation-for="CreatedOn" class="text-danger"></span>
@@ -32,16 +30,16 @@
                 <label asp-for="ModifiedOn" class="control-label"></label>
                 <input asp-for="ModifiedOn" class="form-control" />
                 <span asp-validation-for="ModifiedOn" class="text-danger"></span>
-            </div>
+            </div>*@
             <div class="form-group">
-                <input type="submit" value="Create" class="btn btn-primary" />
+                <input type="submit" value="Thêm mới" class="btn btn-primary" />
             </div>
         </form>
     </div>
 </div>
 
 <div>
-    <a asp-action="Index">Back to List</a>
+    <a asp-action="Index">Quay lại</a>
 </div>
 
 @section Scripts {

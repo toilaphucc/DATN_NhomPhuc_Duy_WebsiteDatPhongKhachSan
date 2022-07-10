@@ -18,7 +18,7 @@
             @Html.DisplayFor(model => model.UserName)
         </dd>
         <dt class = "col-sm-2">
-            @Html.DisplayNameFor(model => model.FullName)
+            Họ và tên
         </dt>
         <dd class = "col-sm-10">
             @Html.DisplayFor(model => model.FullName)
@@ -38,26 +38,36 @@
         <dt class = "col-sm-2">
             Loại tài khoản
         </dt>
-        <dd class = "col-sm-10">
-            @Html.DisplayFor(model => model.IsAdmin)
+        <dd class="col-sm-10">
+            @if (Model.IsAdmin == true)
+            {
+                <h6>Quản trị viên</h6>
+            }
+            else
+            {<h6>Người dùng</h6>}
         </dd>
         <dt class = "col-sm-2">
             @Html.DisplayNameFor(model => model.IsActive)
         </dt>
-        <dd class = "col-sm-10">
-            @Html.DisplayFor(model => model.IsActive)
+        <dd class="col-sm-10">
+            @if (Model.IsActive == true)
+            {
+                <h6>Còn sử dụng</h6>
+            }
+            else
+            {<h6>Tạm khoá</h6>}
         </dd>
         <dt class = "col-sm-2">
             @Html.DisplayNameFor(model => model.CreatedOn)
         </dt>
-        <dd class = "col-sm-10">
-            @Html.DisplayFor(model => model.CreatedOn)
+        <dd class="col-sm-10">
+            @String.Format("{0:dd/MM/yyyy}", Model.CreatedOn)
         </dd>
         <dt class = "col-sm-2">
             Chỉnh sửa lần cuối
         </dt>
-        <dd class = "col-sm-10">
-            @Html.DisplayFor(model => model.ModifiedOn)
+        <dd class="col-sm-10">
+            @String.Format("{0:dd/MM/yyyy}", Model.ModifiedOn)
         </dd>
     </dl>
 </div>

@@ -12,6 +12,8 @@ using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.Mvc.Rendering;
 using Microsoft.EntityFrameworkCore;
 using DATN_WebDatPhongKhachSan.Data;
+using Microsoft.AspNetCore.Http;
+
 namespace DATN_WebDatPhongKhachSan.Controllers
 {
     public class HomeController : Controller
@@ -22,9 +24,10 @@ namespace DATN_WebDatPhongKhachSan.Controllers
         {
             _logger = logger;
         }
-        public IActionResult Index()
+        public async Task<IActionResult> Index()
         {
-            return View();
+            var datPhongKhachSanContext = _context.Rooms.Include(r => r.Owner).Include(r => r.RoomType);
+            return View(await datPhongKhachSanContext.ToListAsync());
         }
         public IActionResult login_user()
         {

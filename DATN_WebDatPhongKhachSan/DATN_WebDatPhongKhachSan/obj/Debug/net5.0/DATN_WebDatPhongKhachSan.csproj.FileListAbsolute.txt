@@ -547,12 +547,6 @@ E:\DATN\DATN_NhomPhuc_Duy_WebsiteDatPhongKhachSan\DATN_WebDatPhongKhachSan\DATN_
 E:\DATN\DATN_NhomPhuc_Duy_WebsiteDatPhongKhachSan\DATN_WebDatPhongKhachSan\DATN_WebDatPhongKhachSan\obj\Debug\net5.0\Razor\Views\RentalTypes\Details.cshtml.g.cs
 E:\DATN\DATN_NhomPhuc_Duy_WebsiteDatPhongKhachSan\DATN_WebDatPhongKhachSan\DATN_WebDatPhongKhachSan\obj\Debug\net5.0\Razor\Views\RentalTypes\Edit.cshtml.g.cs
 E:\DATN\DATN_NhomPhuc_Duy_WebsiteDatPhongKhachSan\DATN_WebDatPhongKhachSan\DATN_WebDatPhongKhachSan\obj\Debug\net5.0\Razor\Views\RentalTypes\Index.cshtml.g.cs
-E:\DATN\DATN_NhomPhuc_Duy_WebsiteDatPhongKhachSan\DATN_WebDatPhongKhachSan\DATN_WebDatPhongKhachSan\obj\Debug\net5.0\Razor\Views\Rooms\ChiTietPhong.cshtml.g.cs
-E:\DATN\DATN_NhomPhuc_Duy_WebsiteDatPhongKhachSan\DATN_WebDatPhongKhachSan\DATN_WebDatPhongKhachSan\obj\Debug\net5.0\Razor\Views\Tags\Create.cshtml.g.cs
-E:\DATN\DATN_NhomPhuc_Duy_WebsiteDatPhongKhachSan\DATN_WebDatPhongKhachSan\DATN_WebDatPhongKhachSan\obj\Debug\net5.0\Razor\Views\Tags\Delete.cshtml.g.cs
-E:\DATN\DATN_NhomPhuc_Duy_WebsiteDatPhongKhachSan\DATN_WebDatPhongKhachSan\DATN_WebDatPhongKhachSan\obj\Debug\net5.0\Razor\Views\Tags\Details.cshtml.g.cs
-E:\DATN\DATN_NhomPhuc_Duy_WebsiteDatPhongKhachSan\DATN_WebDatPhongKhachSan\DATN_WebDatPhongKhachSan\obj\Debug\net5.0\Razor\Views\Tags\Edit.cshtml.g.cs
-E:\DATN\DATN_NhomPhuc_Duy_WebsiteDatPhongKhachSan\DATN_WebDatPhongKhachSan\DATN_WebDatPhongKhachSan\obj\Debug\net5.0\Razor\Views\Tags\Index.cshtml.g.cs
 E:\DATN\DATN_WebDatPhongKhachSan\DATN_WebDatPhongKhachSan\bin\Debug\net5.0\appsettings.Development.json
 E:\DATN\DATN_WebDatPhongKhachSan\DATN_WebDatPhongKhachSan\bin\Debug\net5.0\appsettings.json
 E:\DATN\DATN_WebDatPhongKhachSan\DATN_WebDatPhongKhachSan\bin\Debug\net5.0\DATN_WebDatPhongKhachSan.exe
@@ -1102,3 +1096,8 @@ D:\GIT2\DATN\DATN_WebDatPhongKhachSan\DATN_WebDatPhongKhachSan\obj\Debug\net5.0\
 D:\GIT2\DATN\DATN_WebDatPhongKhachSan\DATN_WebDatPhongKhachSan\obj\Debug\net5.0\DATN_WebDatPhongKhachSan.pdb
 D:\GIT2\DATN\DATN_WebDatPhongKhachSan\DATN_WebDatPhongKhachSan\obj\Debug\net5.0\DATN_WebDatPhongKhachSan.genruntimeconfig.cache
 D:\GIT2\DATN\DATN_WebDatPhongKhachSan\DATN_WebDatPhongKhachSan\obj\Debug\net5.0\Razor\Views\Home\login_user.cshtml.g.cs
+E:\DATN\DATN_NhomPhuc_Duy_WebsiteDatPhongKhachSan\DATN_WebDatPhongKhachSan\DATN_WebDatPhongKhachSan\obj\Debug\net5.0\Razor\Views\Home\login_user.cshtml.g.cs
+E:\DATN\DATN_NhomPhuc_Duy_WebsiteDatPhongKhachSan\DATN_WebDatPhongKhachSan\DATN_WebDatPhongKhachSan\obj\Debug\net5.0\Razor\Views\Rooms\HomeDetail.cshtml.g.cs
+E:\DATN\DATN_NhomPhuc_Duy_WebsiteDatPhongKhachSan\DATN_WebDatPhongKhachSan\DATN_WebDatPhongKhachSan\obj\Debug\net5.0\Razor\Views\Shared\_layout_login_user.cshtml.g.cs
+E:\DATN\DATN_NhomPhuc_Duy_WebsiteDatPhongKhachSan\DATN_WebDatPhongKhachSan\DATN_WebDatPhongKhachSan\obj\Debug\net5.0\Razor\Views\Users\Login.cshtml.g.cs
+E:\DATN\DATN_NhomPhuc_Duy_WebsiteDatPhongKhachSan\DATN_WebDatPhongKhachSan\DATN_WebDatPhongKhachSan\obj\Debug\net5.0\Razor\Views\Users\LoginAdmin.cshtml.g.cs

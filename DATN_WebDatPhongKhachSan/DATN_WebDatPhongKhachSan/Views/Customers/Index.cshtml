@@ -1,38 +1,35 @@
 ﻿@model IEnumerable<DATN_WebDatPhongKhachSan.Models.Customer>
 
 @{
-    ViewData["Title"] = "Index";
+    ViewData["Title"] = "Danh mục thông tin khách thuê";
     Layout = "~/Views/Shared/_layout_admin.cshtml";
 }
 
-<h1>Index</h1>
+<h1>Danh mục thông tin khách hàng thuê</h1>
 
 <p>
-    <a asp-action="Create">Create New</a>
+    <a asp-action="Create">Thêm mới</a>
 </p>
 <table class="table">
     <thead>
         <tr>
             <th>
-                @Html.DisplayNameFor(model => model.User)
+                Tài khoản
             </th>
             <th>
-                @Html.DisplayNameFor(model => model.Date)
+                Họ và tên
             </th>
             <th>
-                @Html.DisplayNameFor(model => model.Month)
+                Số điện thoại
             </th>
             <th>
-                @Html.DisplayNameFor(model => model.Year)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.DoB)
+                Ngày sinh
             </th>
             <th>
                 @Html.DisplayNameFor(model => model.CreatedOn)
             </th>
             <th>
-                @Html.DisplayNameFor(model => model.ModifiedOn)
+                Chỉnh sửa lần cuối
             </th>
             <th></th>
         </tr>
@@ -41,30 +38,27 @@
 @foreach (var item in Model) {
         <tr>
             <td>
-                @Html.DisplayFor(modelItem => item.User.UserID)
+                @Html.DisplayFor(modelItem => item.User.UserName)
             </td>
             <td>
-                @Html.DisplayFor(modelItem => item.Date)
+                @Html.DisplayFor(modelItem => item.User.FullName)
             </td>
             <td>
-                @Html.DisplayFor(modelItem => item.Month)
+                @Html.DisplayFor(modelItem => item.User.Phone)
             </td>
             <td>
-                @Html.DisplayFor(modelItem => item.Year)
+                @String.Format("{0:dd/MM/yyyy}", item.DoB)
             </td>
             <td>
-                @Html.DisplayFor(modelItem => item.DoB)
+                @String.Format("{0:dd/MM/yyyy}", item.CreatedOn)
             </td>
             <td>
-                @Html.DisplayFor(modelItem => item.CreatedOn)
+                @String.Format("{0:dd/MM/yyyy}", item.ModifiedOn)
             </td>
             <td>
-                @Html.DisplayFor(modelItem => item.ModifiedOn)
-            </td>
-            <td>
-                <a asp-action="Edit" asp-route-id="@item.CustomerID">Edit</a> |
-                <a asp-action="Details" asp-route-id="@item.CustomerID">Details</a> |
-                <a asp-action="Delete" asp-route-id="@item.CustomerID">Delete</a>
+                <a asp-action="Edit" asp-route-id="@item.CustomerID"> <i class="fas fa-edit">  ||    </i></a>
+                <a asp-action="Details" asp-route-id="@item.CustomerID"><i class="fas fa-tasks"> ||    </i></a>
+                <a asp-action="Delete" asp-route-id="@item.CustomerID"><i class="fas fa-window-close">    </i></a>
             </td>
         </tr>
 }

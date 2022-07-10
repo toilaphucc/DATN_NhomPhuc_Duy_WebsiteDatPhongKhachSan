@@ -24,16 +24,16 @@ namespace DATN_WebDatPhongKhachSan.Controllers
         {
             var datPhongKhachSanContext = _context.Rooms.Include(r => r.Owner).Include(r => r.RoomType);
             return View(await datPhongKhachSanContext.ToListAsync());
+
         }
         public async Task<IActionResult> Index()
         {
-            var datPhongKhachSanContext = _context.Rooms.Include(r => r.Owner).Include(r => r.RoomType);
+            var datPhongKhachSanContext = _context.Rooms.Include(r => r.Owner.User).Include(r => r.RoomType);
             return View(await datPhongKhachSanContext.ToListAsync());
         }
         public async Task<IActionResult> HomeDetail(Guid ? RoomID)
         {
-            var ID = RouteData.Values["id"];
-            
+            var ID = RouteData.Values["id"];           
             if (ID == null)
             {
                 return NotFound();
@@ -59,7 +59,7 @@ namespace DATN_WebDatPhongKhachSan.Controllers
             }
 
             var room = await _context.Rooms
-                .Include(r => r.Owner)
+                .Include(r => r.Owner.User)
                 .Include(r => r.RoomType)
                 .FirstOrDefaultAsync(m => m.RoomID == id);
             if (room == null)
@@ -74,7 +74,7 @@ namespace DATN_WebDatPhongKhachSan.Controllers
         public IActionResult Create()
         {
             ViewData["OwnerID"] = new SelectList(_context.Owners, "OwnerID", "OwnerID");
-            ViewData["RoomTypeID"] = new SelectList(_context.RoomTypes, "RoomTypeID", "RoomTypeID");
+            ViewData["RoomTypeID"] = new SelectList(_context.RoomTypes, "RoomTypeID", "RoomTypeName");
             return View();
         }
 
@@ -88,6 +88,8 @@ namespace DATN_WebDatPhongKhachSan.Controllers
             if (ModelState.IsValid)
             {
                 room.RoomID = Guid.NewGuid();
+                room.CreatedOn = DateTime.Now;
+                room.ModifiedOn = DateTime.Now;
                 _context.Add(room);
                 await _context.SaveChangesAsync();
                 return RedirectToAction(nameof(Index));
@@ -111,7 +113,7 @@ namespace DATN_WebDatPhongKhachSan.Controllers
                 return NotFound();
             }
             ViewData["OwnerID"] = new SelectList(_context.Owners, "OwnerID", "OwnerID", room.OwnerID);
-            ViewData["RoomTypeID"] = new SelectList(_context.RoomTypes, "RoomTypeID", "RoomTypeID", room.RoomTypeID);
+            ViewData["RoomTypeID"] = new SelectList(_context.RoomTypes, "RoomTypeID", "RoomTypeName", room.RoomTypeID);
             return View(room);
         }
 
@@ -131,6 +133,7 @@ namespace DATN_WebDatPhongKhachSan.Controllers
             {
                 try
                 {
+                    room.ModifiedOn = DateTime.Now;
                     _context.Update(room);
                     await _context.SaveChangesAsync();
                 }
@@ -161,7 +164,7 @@ namespace DATN_WebDatPhongKhachSan.Controllers
             }
 
             var room = await _context.Rooms
-                .Include(r => r.Owner)
+                .Include(r => r.Owner.User)
                 .Include(r => r.RoomType)
                 .FirstOrDefaultAsync(m => m.RoomID == id);
             if (room == null)

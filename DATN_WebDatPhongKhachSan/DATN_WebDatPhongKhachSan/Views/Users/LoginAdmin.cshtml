@@ -1,0 +1,41 @@
+﻿@model DATN_WebDatPhongKhachSan.Models.User
+@{
+    ViewData["Title"] = "Đăng nhập";
+}
+@{
+    Layout = "_layout_login_user";
+}
+
+
+<div class="container-fluid p-0">
+    <div class="row no-gutters">
+        <div class="col-sm-7 login-card-wrapper">
+            <div class="card login-card">
+                <div class="card-body">
+                    <h2 class="login-card-title">Đăng nhập</h2>
+                    @*<p class="login-card-description">Đăng nhập</p>*@
+                    <form action="#!">
+                        <div class="form-group">
+                            <label for="UserName" class="sr-only">Tài khoản</label>
+                            <input name="UserName" asp-for="UserName" type="text" class="form-control" placeholder="Tài khoản">
+                        </div>
+                        <div class="form-group">
+                            <label for="Password" class="sr-only">Mật khẩu</label>
+                            <input name="Password" asp-for="Password" type="password" class="form-control" placeholder="Mật khẩu">
+                        </div>
+                        <div class="form-options-wrapper">
+                            <div class="custom-control custom-checkbox login-card-check-box">
+                                <input type="checkbox" class="custom-control-input" id="customCheck1">
+                                <label class="custom-control-label" for="customCheck1">Nhớ tài khoản</label>
+                            </div>
+                            <a href="#!" class="text-reset">Quên mật khẩu ?</a>
+                        </div>
+                        @*<input asp-action="LoginAdmin" asp-controller="Users" class="btn btn-block login-btn" type="button" value="Đăng nhập">*@
+                        <button class="btn btn-block login-btn" asp-controller="Users" asp-action="LoginAdmin" >Đăng nhập</button>
+                    </form>
+                    <p class="login-card-footer-text">Nếu chưa có tài khoản ?<a class="text-reset">Đăng ký ngay</a></p>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

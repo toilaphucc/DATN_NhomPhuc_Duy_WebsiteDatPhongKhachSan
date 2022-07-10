@@ -1,23 +1,21 @@
 ﻿@model DATN_WebDatPhongKhachSan.Models.Customer
 
 @{
-    ViewData["Title"] = "Create";
+    ViewData["Title"] = "Thêm thông tin khách thuê";
     Layout = "~/Views/Shared/_layout_admin.cshtml";
 }
 
-<h1>Create</h1>
-
-<h4>Customer</h4>
+<h1>Thêm thông tin khách thuê</h1>
 <hr />
 <div class="row">
     <div class="col-md-4">
         <form asp-action="Create">
             <div asp-validation-summary="ModelOnly" class="text-danger"></div>
             <div class="form-group">
-                <label asp-for="UserID" class="control-label"></label>
+                <label class="control-label">Tài khoản</label>
                 <select asp-for="UserID" class ="form-control" asp-items="ViewBag.UserID"></select>
             </div>
-            <div class="form-group">
+            @*<div class="form-group">
                 <label asp-for="Date" class="control-label"></label>
                 <input asp-for="Date" class="form-control" />
                 <span asp-validation-for="Date" class="text-danger"></span>
@@ -31,13 +29,13 @@
                 <label asp-for="Year" class="control-label"></label>
                 <input asp-for="Year" class="form-control" />
                 <span asp-validation-for="Year" class="text-danger"></span>
-            </div>
+            </div>*@
             <div class="form-group">
                 <label asp-for="DoB" class="control-label"></label>
                 <input asp-for="DoB" class="form-control" />
                 <span asp-validation-for="DoB" class="text-danger"></span>
             </div>
-            <div class="form-group">
+            @*<div class="form-group">
                 <label asp-for="CreatedOn" class="control-label"></label>
                 <input asp-for="CreatedOn" class="form-control" />
                 <span asp-validation-for="CreatedOn" class="text-danger"></span>
@@ -46,9 +44,9 @@
                 <label asp-for="ModifiedOn" class="control-label"></label>
                 <input asp-for="ModifiedOn" class="form-control" />
                 <span asp-validation-for="ModifiedOn" class="text-danger"></span>
-            </div>
+            </div>*@
             <div class="form-group">
-                <input type="submit" value="Create" class="btn btn-primary" />
+                <input type="submit" value="Thêm nới" class="btn btn-primary" />
             </div>
         </form>
     </div>

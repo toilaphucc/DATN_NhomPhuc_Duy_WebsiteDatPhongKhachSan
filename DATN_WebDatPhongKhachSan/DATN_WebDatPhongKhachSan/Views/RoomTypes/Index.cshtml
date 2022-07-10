@@ -1,29 +1,29 @@
 ﻿@model IEnumerable<DATN_WebDatPhongKhachSan.Models.RoomType>
 
 @{
-    ViewData["Title"] = "Index";
+    ViewData["Title"] = "Danh mục loại phòng";
     Layout = "~/Views/Shared/_layout_admin.cshtml";
 }
 
-<h1>Index</h1>
+<h1>Danh sách các loại phòng cho thuê</h1>
 
 <p>
-    <a asp-action="Create">Create New</a>
+    <a asp-action="Create">Thêm mới</a>
 </p>
 <table class="table">
     <thead>
         <tr>
             <th>
-                @Html.DisplayNameFor(model => model.RoomTypeName)
+                Loại phòng
             </th>
             <th>
-                @Html.DisplayNameFor(model => model.Detail)
+                Thông tin chi tiết
             </th>
             <th>
                 @Html.DisplayNameFor(model => model.CreatedOn)
             </th>
             <th>
-                @Html.DisplayNameFor(model => model.ModifiedOn)
+                Chỉnh sửa lần cuối
             </th>
             <th></th>
         </tr>
@@ -38,15 +38,15 @@
                 @Html.DisplayFor(modelItem => item.Detail)
             </td>
             <td>
-                @Html.DisplayFor(modelItem => item.CreatedOn)
+                @String.Format("{0:dd/MM/yyyy}", item.CreatedOn)
             </td>
             <td>
-                @Html.DisplayFor(modelItem => item.ModifiedOn)
+                @String.Format("{0:dd/MM/yyyy}", item.ModifiedOn)
             </td>
             <td>
-                <a asp-action="Edit" asp-route-id="@item.RoomTypeID">Edit</a> |
-                <a asp-action="Details" asp-route-id="@item.RoomTypeID">Details</a> |
-                <a asp-action="Delete" asp-route-id="@item.RoomTypeID">Delete</a>
+                <a asp-action="Edit" asp-route-id="@item.RoomTypeID"> <i class="fas fa-edit">  ||    </i></a>
+                <a asp-action="Details" asp-route-id="@item.RoomTypeID"><i class="fas fa-tasks"> ||    </i></a>
+                <a asp-action="Delete" asp-route-id="@item.RoomTypeID"><i class="fas fa-window-close">    </i></a>
             </td>
         </tr>
 }

@@ -1,44 +1,35 @@
 ﻿@model IEnumerable<DATN_WebDatPhongKhachSan.Models.Room>
 
 @{
-    ViewData["Title"] = "Index";
+    ViewData["Title"] = "Danh mục phòng cho thuê";
     Layout = "~/Views/Shared/_layout_admin.cshtml";
 }
 
-<h1>Index</h1>
+<h1>Danh mục phòng cho thuê</h1>
 
 <p>
-    <a asp-action="Create">Create New</a>
+    <a asp-action="Create">Thêm phòng mới</a>
 </p>
 <table class="table">
     <thead>
         <tr>
             <th>
-                @Html.DisplayNameFor(model => model.Owner)
+                Tài khoản chủ
             </th>
             <th>
-                @Html.DisplayNameFor(model => model.RoomCode)
+                Mã phòng
             </th>
             <th>
                 @Html.DisplayNameFor(model => model.Price)
             </th>
             <th>
-                @Html.DisplayNameFor(model => model.Detail)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.Image)
-            </th>
-            <th>
                 @Html.DisplayNameFor(model => model.AmountRoom)
             </th>
             <th>
-                @Html.DisplayNameFor(model => model.IsActive)
+                Trạng thái
             </th>
             <th>
-                @Html.DisplayNameFor(model => model.RoomType)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.TagID)
+                Loại phòng
             </th>
             <th>
                 @Html.DisplayNameFor(model => model.Name)
@@ -47,7 +38,7 @@
                 @Html.DisplayNameFor(model => model.CreatedOn)
             </th>
             <th>
-                @Html.DisplayNameFor(model => model.ModifiedOn)
+                Chỉnh sửa lần cuối
             </th>
             <th></th>
         </tr>
@@ -56,45 +47,43 @@
 @foreach (var item in Model) {
         <tr>
             <td>
-                @Html.DisplayFor(modelItem => item.Owner.OwnerID)
+                @Html.DisplayFor(modelItem => item.Owner.User.UserName)
             </td>
             <td>
                 @Html.DisplayFor(modelItem => item.RoomCode)
             </td>
             <td>
-                @Html.DisplayFor(modelItem => item.Price)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.Detail)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.Image)
+                @item.Price.ToString(("#,##0. VNĐ"))
             </td>
             <td>
                 @Html.DisplayFor(modelItem => item.AmountRoom)
             </td>
             <td>
-                @Html.DisplayFor(modelItem => item.IsActive)
+                @if (item.IsActive == true)
+                {
+                    <img width="30" height="30" src="~/assets/icon/checked.png" alt="Alternate Text" />
+                }
+                else
+                {
+                    <img width="30" height="30" src="~/assets/icon/cross.png" alt="Alternate Text" />
+                }
             </td>
             <td>
-                @Html.DisplayFor(modelItem => item.RoomType.RoomTypeID)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.TagID)
+                @Html.DisplayFor(modelItem => item.RoomType.RoomTypeName)
             </td>
             <td>
                 @Html.DisplayFor(modelItem => item.Name)
             </td>
             <td>
-                @Html.DisplayFor(modelItem => item.CreatedOn)
+                @String.Format("{0:dd/MM/yyyy}", item.CreatedOn)
             </td>
             <td>
-                @Html.DisplayFor(modelItem => item.ModifiedOn)
+                @String.Format("{0:dd/MM/yyyy}", item.ModifiedOn)
             </td>
             <td>
-                <a asp-action="Edit" asp-route-id="@item.RoomID">Edit</a> |
-                <a asp-action="Details" asp-route-id="@item.RoomID">Details</a> |
-                <a asp-action="Delete" asp-route-id="@item.RoomID">Delete</a>
+                <a asp-action="Edit" asp-route-id="@item.RoomID"> <i class="fas fa-edit">  ||    </i></a>
+                <a asp-action="Details" asp-route-id="@item.RoomID"><i class="fas fa-tasks"> ||    </i></a>
+                <a asp-action="Delete" asp-route-id="@item.RoomID"><i class="fas fa-window-close">    </i></a>
             </td>
         </tr>
 }

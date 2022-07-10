@@ -1,24 +1,24 @@
 ﻿@model DATN_WebDatPhongKhachSan.Models.Room
 
 @{
-    ViewData["Title"] = "Details";
+    ViewData["Title"] = "Thông tin phòng";
     Layout = "~/Views/Shared/_layout_admin.cshtml";
 }
 
-<h1>Details</h1>
+<h1>Thông tin phòng</h1>
 
 <div>
-    <h4>Room</h4>
+    <h4>Phòng: @Model.RoomCode</h4>
     <hr />
     <dl class="row">
         <dt class = "col-sm-2">
-            @Html.DisplayNameFor(model => model.Owner)
+            Tên tài khoản chủ
         </dt>
         <dd class = "col-sm-10">
-            @Html.DisplayFor(model => model.Owner.OwnerID)
+            @Html.DisplayFor(model => model.Owner.User.UserName)
         </dd>
         <dt class = "col-sm-2">
-            @Html.DisplayNameFor(model => model.RoomCode)
+            Mã phòng
         </dt>
         <dd class = "col-sm-10">
             @Html.DisplayFor(model => model.RoomCode)
@@ -26,8 +26,8 @@
         <dt class = "col-sm-2">
             @Html.DisplayNameFor(model => model.Price)
         </dt>
-        <dd class = "col-sm-10">
-            @Html.DisplayFor(model => model.Price)
+        <dd class="col-sm-10">
+            @Model.Price.ToString(("#,##0. VNĐ"))
         </dd>
         <dt class = "col-sm-2">
             @Html.DisplayNameFor(model => model.Detail)
@@ -50,17 +50,22 @@
         <dt class = "col-sm-2">
             @Html.DisplayNameFor(model => model.IsActive)
         </dt>
-        <dd class = "col-sm-10">
-            @Html.DisplayFor(model => model.IsActive)
+        <dd class="col-sm-10">
+            @if (Model.IsActive == true)
+            {
+                <h6>Còn cho thuê</h6>
+            }
+            else
+            {<h6>Tạm khoá</h6>}
         </dd>
         <dt class = "col-sm-2">
-            @Html.DisplayNameFor(model => model.RoomType)
+            Loại phòng
         </dt>
         <dd class = "col-sm-10">
-            @Html.DisplayFor(model => model.RoomType.RoomTypeID)
+            @Html.DisplayFor(model => model.RoomType.RoomTypeName)
         </dd>
         <dt class = "col-sm-2">
-            @Html.DisplayNameFor(model => model.TagID)
+            Danh sách tiện ích
         </dt>
         <dd class = "col-sm-10">
             @Html.DisplayFor(model => model.TagID)
@@ -74,18 +79,18 @@
         <dt class = "col-sm-2">
             @Html.DisplayNameFor(model => model.CreatedOn)
         </dt>
-        <dd class = "col-sm-10">
-            @Html.DisplayFor(model => model.CreatedOn)
+        <dd class="col-sm-10">
+            @String.Format("{0:dd/MM/yyyy}", Model.CreatedOn)
         </dd>
         <dt class = "col-sm-2">
-            @Html.DisplayNameFor(model => model.ModifiedOn)
+            Chỉnh sửa lần cuối
         </dt>
-        <dd class = "col-sm-10">
-            @Html.DisplayFor(model => model.ModifiedOn)
+        <dd class="col-sm-10">
+            @String.Format("{0:dd/MM/yyyy}", Model.ModifiedOn)
         </dd>
     </dl>
 </div>
 <div>
-    <a asp-action="Edit" asp-route-id="@Model.RoomID">Edit</a> |
-    <a asp-action="Index">Back to List</a>
+    <a asp-action="Edit" asp-route-id="@Model.RoomID">Chỉnh sửa</a> |
+    <a asp-action="Index">Quay lại</a>
 </div>
