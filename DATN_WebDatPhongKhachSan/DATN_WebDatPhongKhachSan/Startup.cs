@@ -52,7 +52,7 @@ namespace DATN_WebDatPhongKhachSan
             {
                 endpoints.MapControllerRoute(
                     name: "default",
-                    pattern: "{controller=Users}/{action=Login}/{id?}");
+                    pattern: "{controller=Users}/{action=LoginAdmin}/{id?}");
             });
         }
     }
