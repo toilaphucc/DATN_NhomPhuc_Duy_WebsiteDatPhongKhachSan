@@ -1101,3 +1101,4 @@ E:\DATN\DATN_NhomPhuc_Duy_WebsiteDatPhongKhachSan\DATN_WebDatPhongKhachSan\DATN_
 E:\DATN\DATN_NhomPhuc_Duy_WebsiteDatPhongKhachSan\DATN_WebDatPhongKhachSan\DATN_WebDatPhongKhachSan\obj\Debug\net5.0\Razor\Views\Shared\_layout_login_user.cshtml.g.cs
 E:\DATN\DATN_NhomPhuc_Duy_WebsiteDatPhongKhachSan\DATN_WebDatPhongKhachSan\DATN_WebDatPhongKhachSan\obj\Debug\net5.0\Razor\Views\Users\Login.cshtml.g.cs
 E:\DATN\DATN_NhomPhuc_Duy_WebsiteDatPhongKhachSan\DATN_WebDatPhongKhachSan\DATN_WebDatPhongKhachSan\obj\Debug\net5.0\Razor\Views\Users\LoginAdmin.cshtml.g.cs
+D:\GIT2\DATN\DATN_WebDatPhongKhachSan\DATN_WebDatPhongKhachSan\obj\Debug\net5.0\Razor\Views\Users\LoginAdmin.cshtml.g.cs

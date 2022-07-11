@@ -1,32 +1,28 @@
 {
   "format": 1,
   "restore": {
-    "E:\\DATN\\DATN_NhomPhuc_Duy_WebsiteDatPhongKhachSan\\DATN_WebDatPhongKhachSan\\DATN_WebDatPhongKhachSan\\DATN_WebDatPhongKhachSan.csproj": {}
+    "D:\\GIT2\\DATN\\DATN_WebDatPhongKhachSan\\DATN_WebDatPhongKhachSan\\DATN_WebDatPhongKhachSan.csproj": {}
   },
   "projects": {
-    "E:\\DATN\\DATN_NhomPhuc_Duy_WebsiteDatPhongKhachSan\\DATN_WebDatPhongKhachSan\\DATN_WebDatPhongKhachSan\\DATN_WebDatPhongKhachSan.csproj": {
+    "D:\\GIT2\\DATN\\DATN_WebDatPhongKhachSan\\DATN_WebDatPhongKhachSan\\DATN_WebDatPhongKhachSan.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "E:\\DATN\\DATN_NhomPhuc_Duy_WebsiteDatPhongKhachSan\\DATN_WebDatPhongKhachSan\\DATN_WebDatPhongKhachSan\\DATN_WebDatPhongKhachSan.csproj",
+        "projectUniqueName": "D:\\GIT2\\DATN\\DATN_WebDatPhongKhachSan\\DATN_WebDatPhongKhachSan\\DATN_WebDatPhongKhachSan.csproj",
         "projectName": "DATN_WebDatPhongKhachSan",
-        "projectPath": "E:\\DATN\\DATN_NhomPhuc_Duy_WebsiteDatPhongKhachSan\\DATN_WebDatPhongKhachSan\\DATN_WebDatPhongKhachSan\\DATN_WebDatPhongKhachSan.csproj",
-        "packagesPath": "C:\\Users\\ACER\\.nuget\\packages\\",
-        "outputPath": "E:\\DATN\\DATN_NhomPhuc_Duy_WebsiteDatPhongKhachSan\\DATN_WebDatPhongKhachSan\\DATN_WebDatPhongKhachSan\\obj\\",
+        "projectPath": "D:\\GIT2\\DATN\\DATN_WebDatPhongKhachSan\\DATN_WebDatPhongKhachSan\\DATN_WebDatPhongKhachSan.csproj",
+        "packagesPath": "C:\\Users\\vophu\\.nuget\\packages\\",
+        "outputPath": "D:\\GIT2\\DATN\\DATN_WebDatPhongKhachSan\\DATN_WebDatPhongKhachSan\\obj\\",
         "projectStyle": "PackageReference",
-        "fallbackFolders": [
-          "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
-        ],
         "configFilePaths": [
-          "C:\\Users\\ACER\\AppData\\Roaming\\NuGet\\NuGet.Config",
-          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
+          "C:\\Users\\vophu\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
           "net5.0"
         ],
         "sources": {
-          "https://api.nuget.org/v3/index.json": {},
-          "https://nuget.devexpress.com/6VcOaaDXySpSOKABbtmNdD5Fp7cl7lyFlmc8j6hcM2iiu6cKZK/api": {}
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "https://api.nuget.org/v3/index.json": {}
         },
         "frameworks": {
           "net5.0": {
@@ -85,7 +81,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.408\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.106\\RuntimeIdentifierGraph.json"
         }
       }
     }

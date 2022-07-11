@@ -2429,7 +2429,9 @@ a.anh1 img {
 .map {
     width: 70%;
 }
-
+.table thead th{
+    padding:0.5rem 0.5rem;
+}
 .name-map {
     font-size: 17px;
     color: #000;
@@ -2614,7 +2616,7 @@ a.anh1 img {
 
 .login-card .login-btn {
     padding: 18px 20px;
-    background-color: #6e00ff;
+    background-color: #b5b5b5;
     border-radius: 4px;
     font-size: 17px;
     font-weight: bold;
@@ -2652,4 +2654,7 @@ a.anh1 img {
     .form-options-wrapper {
         display: block;
     }
+}
+.w-login {
+    background: #b5b5b5;
 }
